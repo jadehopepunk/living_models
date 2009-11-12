@@ -1,0 +1,9 @@
+%h1 Kiwis Can Do
+%h2 a bank of living models
+.pitch
+  People everywhere are building resilience in their communities
+
+.add_project_teaser
+  %h3 Add a project
+  - form_for :project, :url => projects_path, :legend => "Add a project" do |f|
+    = f.text_field :stuff
