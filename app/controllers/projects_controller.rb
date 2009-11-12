@@ -1,10 +1,4 @@
-class ProjectsController < ApplicationController
+class ProjectsController < InheritedResources::Base
   
-  def index
-  end
-  
-  def new
-    @project = Project.new(params[:project])
-  end
   
 end
