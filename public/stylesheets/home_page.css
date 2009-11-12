@@ -1,0 +1,15 @@
+.home_page_section {
+  width: 500px;
+  border: 2px solid #666;
+  margin: 1em 10px;
+  padding: 10px;
+  *display: inline-block; }
+  .home_page_section:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .home_page_section h3 {
+    margin-top: 0;
+    font-size: 130%; }
