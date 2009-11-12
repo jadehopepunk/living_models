@@ -5,7 +5,8 @@
 
 .home_page_section.add_project_teaser
   %h3 Add a project
-  - form_for :project, :url => projects_path, :legend => "Add a project" do |f|
+  - form_for :project, :url => new_project_path, :html => {:method => :get} do |f|
     = f.text_field :location
     = f.text_field :category
     = f.text_field :focus
+    = submit_tag "Next..."

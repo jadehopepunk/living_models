@@ -62,3 +62,12 @@ h3 {
   border-width: 2px;
   margin: 5px 0;
   padding: 3px 6px; }
+
+form {
+  *display: inline-block; }
+  form:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }

@@ -1,0 +1,6 @@
+%h1 Add a project
+- form_for @project do |f|
+  = f.text_field :location
+  = f.text_field :category
+  = f.text_field :focus
+  = submit_tag "Next..."
