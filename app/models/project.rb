@@ -19,6 +19,6 @@
 #
 
 class Project < ActiveRecord::Base
-  validates_presence_of :location, :category, :summmary, :contact_email_address
+  validates_presence_of :location, :category, :summary, :contact_email_address
   validates_length_of :location, :category, :tags, :website, :contact_email_address, :contact_name, :contact_phone, :maximum => 255, :allow_nil => true
 end

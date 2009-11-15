@@ -1,0 +1,7 @@
+form .LV_validation_message {
+  font-weight: bold;
+  margin: 0 0 0 5px; }
+form .LV_valid {
+  color: #00CC00; }
+form .LV_invalid {
+  color: #CC0000; }

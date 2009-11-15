@@ -1,9 +1,13 @@
 %h1 Add a project
-- form_for @project do |f|
+- form_for @project, :live_validations => true do |f|
   = f.error_messages
   = f.text_field :location, :required => true, :help => "Use a valid new zealand street address if possible."
   = f.text_field :category, :required => true, :help => "We still need to figure out how this works!"
   = f.text_field :tags, :help => "We still need to figure out how this works!"
+  = f.text_field :contact_name
+  = f.text_field :contact_email_address, :required => true
+  = f.text_field :contact_phone
+  = f.text_field :website, :help => "Website address for your project, if it has one"
   = f.text_area :summary, :required => true, :label => "Brief Summary", :help => "Describe your project in one paragraph."
   = f.text_area :goals, :label => "Vision and Goals", :help => "What was the project trying to achieve since it started? What problem is it trying to solve?"
   = f.text_area :outcomes, :help => "What has the project achieved, how has it helped making a community more resilient?"
