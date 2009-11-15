@@ -21,7 +21,12 @@ form select {
 form textarea {
   font-family: Georgia;
   font-size: 16pt;
-  font-color: #000; }
+  font-color: #000;
+  height: 6em; }
+form textarea.short {
+  height: 3em; }
+form textarea.long {
+  height: 12em; }
 form input[type=text], form input[type=password] {
   border-top: 2px solid #999999;
   border-left: 2px solid #999999;

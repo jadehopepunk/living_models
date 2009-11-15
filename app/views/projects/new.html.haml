@@ -8,8 +8,9 @@
   = f.text_field :contact_email_address, :required => true
   = f.text_field :contact_phone
   = f.text_field :website, :help => "Website address for your project, if it has one"
-  = f.text_area :summary, :required => true, :label => "Brief Summary", :help => "Describe your project in one paragraph."
-  = f.text_area :goals, :label => "Vision and Goals", :help => "What was the project trying to achieve since it started? What problem is it trying to solve?"
-  = f.text_area :outcomes, :help => "What has the project achieved, how has it helped making a community more resilient?"
-  = f.text_area :future_plans, :help => "Any new things on the horizon for the project."
+  = f.textile_editor :summary, :simple => true, :required => true, :label => "Brief Summary", :help => "Describe your project in one paragraph."
+  = f.textile_editor :goals, :simple => true, :label => "Vision and Goals", :help => "What was the project trying to achieve since it started? What problem is it trying to solve?", :class => 'long'
+  = f.textile_editor :outcomes, :simple => true, :help => "What has the project achieved, how has it helped making a community more resilient?", :class => 'long'
+  = f.textile_editor :future_plans, :simple => true, :help => "Any new things on the horizon for the project.", :class => 'long'
   = f.submit_and_cancel_buttons "Create"
+  = textile_editor_initialize
