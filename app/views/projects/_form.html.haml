@@ -1,0 +1,16 @@
+- form_for @project, :live_validations => true do |f|
+  = f.error_messages
+  = f.text_field :name, :required => true, :help => "What is this project called?"
+  = f.text_field :location, :required => true, :help => "Use a valid new zealand street address if possible."
+  = f.text_field :category, :required => true, :help => "We still need to figure out how this works!"
+  = f.text_field :tags, :help => "We still need to figure out how this works!"
+  = f.text_field :contact_name
+  = f.text_field :contact_email_address, :required => true
+  = f.text_field :contact_phone
+  = f.text_field :website, :help => "Website address for your project, if it has one"
+  = f.textile_editor :summary, :simple => true, :required => true, :label => "Brief Summary", :help => "Describe your project in one paragraph."
+  = f.textile_editor :goals, :simple => true, :label => "Vision and Goals", :help => "What was the project trying to achieve since it started? What problem is it trying to solve?", :class => 'long'
+  = f.textile_editor :outcomes, :simple => true, :help => "What has the project achieved, how has it helped making a community more resilient?", :class => 'long'
+  = f.textile_editor :future_plans, :simple => true, :help => "Any new things on the horizon for the project.", :class => 'long'
+  = f.submit_and_cancel_buttons "Create"
+  = textile_editor_initialize
