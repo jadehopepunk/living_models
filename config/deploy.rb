@@ -19,3 +19,13 @@ namespace :deploy do
     task t, :roles => :app do ; end
   end
 end
+
+after "deploy:update_code" do
+  link_from_shared_to_current('config')
+end
+
+def link_from_shared_to_current(path, dest_path = path)
+  src_path = "#{shared_path}/#{path}"
+  dst_path = "#{release_path}/#{dest_path}"
+  run "for f in `ls #{src_path}/` ; do ln -nsf #{src_path}/$f #{dst_path}/$f ; done"
+end

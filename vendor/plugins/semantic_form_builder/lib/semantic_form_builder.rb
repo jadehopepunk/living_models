@@ -88,7 +88,7 @@ class SemanticFormBuilder < ActionView::Helpers::FormBuilder
       html_options.delete('href')
       html_options.delete('alt')
       html_options.delete('confirm')
-      convert_options_to_javascript!(html_options)
+      # convert_options_to_javascript!(html_options)
     end
     
     tag(:button, { :type => "submit", :class => "positive", :value => value }.update(html_options), true) +
@@ -102,7 +102,7 @@ class SemanticFormBuilder < ActionView::Helpers::FormBuilder
     if options
       html_options = options.stringify_keys
       href = html_options['href']
-      convert_options_to_javascript!(html_options)
+      # convert_options_to_javascript!(html_options)
     end
     
     tag(:a, { :class => "negative", :value => value }.update(html_options), true) +
@@ -110,9 +110,9 @@ class SemanticFormBuilder < ActionView::Helpers::FormBuilder
     "</a>"
   end
   
-  def submit_and_cancel_buttons(submit_name, cancel_name, options = {})
-    submit_button = submit_button_tag(submit_name, options)
-    cancel_button = cancel_button_tag(cancel_name, options)
+  def submit_and_cancel_buttons(submit_name = 'Save', cancel_name = 'Cancel', options = {})
+    submit_button = @template.submit_tag(submit_name, options)
+    cancel_button = '' #cancel_tag(cancel_name, options)
     wrapping("submit", nil, "", submit_button+cancel_button, options)
   end
   

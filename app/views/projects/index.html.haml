@@ -6,7 +6,7 @@
 .home_page_section.add_project_teaser
   %h3 Add a project
   - form_for :project, :url => new_project_path, :html => {:method => :get} do |f|
-    = f.text_field :location
-    = f.text_field :category
-    = f.text_field :tags
+    = f.text_field :location, :help => "Use a valid new zealand street address if possible."
+    = f.text_field :category, :help => "We still need to figure out how this works!"
+    = f.text_field :tags, :help => "We still need to figure out how this works!"
     = submit_tag "Next..."
