@@ -1,6 +1,10 @@
 %h1 Add a project
 - form_for @project do |f|
-  = f.text_field :location
-  = f.text_field :category
-  = f.text_field :focus
-  = submit_tag "Next..."
+  = f.text_field :location, :help => "Use a valid new zealand street address if possible."
+  = f.text_field :category, :help => "We still need to figure out how this works!"
+  = f.text_field :tags, :help => "We still need to figure out how this works!"
+  = f.text_area :summary, :label => "Brief Summary", :help => "Describe your project in one paragraph."
+  = f.text_area :goals, :label => "Vision and Goals", :help => "What was the project trying to achieve since it started? What problem is it trying to solve?"
+  = f.text_area :outcomes, :help => "What has the project achieved, how has it helped making a community more resilient?"
+  = f.text_area :future_plans, :help => "Any new things on the horizon for the project."
+  = submit_tag "Create"
