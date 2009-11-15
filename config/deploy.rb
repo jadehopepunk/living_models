@@ -6,6 +6,7 @@ require 'capistrano/ext/multistage'
 set :application, "living_models"
 set :repository,  "git@github.com:craigambrose/living_models.git"
 set :scm, "git"
+set :git_enable_submodules, 1
 set :branch, "master" unless exists?(:branch)
 
 namespace :deploy do
@@ -23,6 +24,8 @@ end
 after "deploy:update_code" do
   link_from_shared_to_current('config')
 end
+after "deploy", "deploy:cleanup"
+
 
 def link_from_shared_to_current(path, dest_path = path)
   src_path = "#{shared_path}/#{path}"

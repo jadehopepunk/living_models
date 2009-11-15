@@ -5,3 +5,7 @@ form .LV_valid {
   color: #00CC00; }
 form .LV_invalid {
   color: #CC0000; }
+form .LV_valid_field, form input.LV_valid_field:hover, form input.LV_valid_field:active, form textarea.LV_valid_field:hover, form textarea.LV_valid_field:active {
+  border-color: #00CC00; }
+form .LV_invalid_field, form input.LV_invalid_field:hover, form input.LV_invalid_field:active, form textarea.LV_invalid_field:hover, form textarea.LV_invalid_field:active {
+  border-color: #CC0000; }
