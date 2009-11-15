@@ -1,3 +1,0 @@
-[submodule "vendor/plugins/semantic_form_builder"]
-	path = vendor/plugins/semantic_form_builder
-	url = git://github.com/craigambrose/semantic_form_builder.git
