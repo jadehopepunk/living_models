@@ -16,9 +16,10 @@
 #  contact_phone         :string(255)
 #  created_at            :datetime
 #  updated_at            :datetime
+#  name                  :string(255)
 #
 
 class Project < ActiveRecord::Base
-  validates_presence_of :location, :category, :summary, :contact_email_address
-  validates_length_of :location, :category, :tags, :website, :contact_email_address, :contact_name, :contact_phone, :maximum => 255, :allow_nil => true
+  validates_presence_of :name, :location, :category, :summary, :contact_email_address
+  validates_length_of :name, :location, :category, :tags, :website, :contact_email_address, :contact_name, :contact_phone, :maximum => 255, :allow_nil => true
 end
