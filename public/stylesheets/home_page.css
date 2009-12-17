@@ -1,15 +1,16 @@
-.home_page_section {
-  width: 500px;
-  border: 2px solid #666;
-  margin: 1em 10px;
-  padding: 10px;
-  *display: inline-block; }
-  .home_page_section:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-  .home_page_section h3 {
-    margin-top: 0;
-    font-size: 130%; }
+#search {
+  background-image: url(../images/layout/search_background.gif);
+  background-repeat: repeat-y;
+  height: 100px; }
+  #search .contents {
+    background-image: url(../images/layout/search_header.gif);
+    background-repeat: no-repeat;
+    padding: 40px 30px 30px 30px; }
+
+#results {
+  background-image: url(../images/layout/results_background.gif);
+  background-repeat: repeat-y; }
+  #results .contents {
+    background-image: url(../images/layout/results_header.gif);
+    background-repeat: no-repeat;
+    padding: 50px 30px 30px 360px; }
