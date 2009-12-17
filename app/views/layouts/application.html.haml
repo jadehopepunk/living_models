@@ -7,7 +7,11 @@
     = javascript_include_tag :default, :all
   %body
     #page_body
-      #page_body_contents
-        %h1 Kiwis Can Do
-        %h2 a bank of living models
+      #header
+        #top_menu
+          = site_section_link :about, "About", '#'
+          = site_section_link :contact, "Contact", '#'
+        #hero
+          %h1 The great kiwi solutions finder
+      #contents
         = yield

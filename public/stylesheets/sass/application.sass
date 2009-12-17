@@ -1,6 +1,6 @@
 @import mixins.sass
 
-!fixed_width= 980px
+!fixed_width= 1000px
  
 !anchor_light= #FF6633
 !anchor_dark= #CC3300
@@ -10,7 +10,7 @@
 !error_text= #DD3C10
 !error_background= #fff9d7 
 !error_border= #e2c822
- 
+
 body
   :margin 0
   :padding 0
@@ -44,27 +44,49 @@ h3
   :font-size 13pt
   :font-weight normal
   :color= !heading
- 
-#header_contents, #page_body_contents
+  
+#page_body
   :width= !fixed_width
-  :margin 0 auto
-  :padding 10px
+  :margin 10px auto
  
-#header
-  :background-image url('../images/gradient_top.png')
+#top_menu
+  :background-image url('../images/layout/top_menu_background.gif')
   :background-repeat repeat-x
-  :background-color #383838
   :width 100%
-  :height 100px
+  :height 43px
   :top 0px
+  
+  a.site_section
+    width: 120px
+    height: 43px
+    display: inline-block
+    background-repeat: no-repeat
+    
+    span
+      display: none
+      
+  a#about
+    background-image: url(../images/layout/top_menu_about.gif)    
+    &:hover
+      background-image: url(../images/layout/top_menu_about_over.gif)    
+  
+  a#contact
+    background-image: url(../images/layout/top_menu_contact.gif)
+    &:hover
+      background-image: url(../images/layout/top_menu_contact_over.gif)    
+  
+#hero
+  :background-image url('../images/layout/Header.jpg')
+  :background-repeat no-repeat
+  :height 200px
+  
+  h1
+    display: none
   
 #header_contents
   :color #EEE
   
-#page_body
-  :padding 20px 0
- 
-#page_body_contents
+#contents
   :background-color #FFF
   
 .formError

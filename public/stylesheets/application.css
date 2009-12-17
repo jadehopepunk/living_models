@@ -32,26 +32,43 @@ h3 {
   font-weight: normal;
   color: #333399; }
 
-#header_contents, #page_body_contents {
-  width: 980px;
-  margin: 0 auto;
-  padding: 10px; }
+#page_body {
+  width: 1000px;
+  margin: 10px auto; }
 
-#header {
-  background-image: url('../images/gradient_top.png');
+#top_menu {
+  background-image: url('../images/layout/top_menu_background.gif');
   background-repeat: repeat-x;
-  background-color: #383838;
   width: 100%;
-  height: 100px;
+  height: 43px;
   top: 0px; }
+  #top_menu a.site_section {
+    width: 120px;
+    height: 43px;
+    display: inline-block;
+    background-repeat: no-repeat; }
+    #top_menu a.site_section span {
+      display: none; }
+  #top_menu a#about {
+    background-image: url(../images/layout/top_menu_about.gif); }
+    #top_menu a#about:hover {
+      background-image: url(../images/layout/top_menu_about_over.gif); }
+  #top_menu a#contact {
+    background-image: url(../images/layout/top_menu_contact.gif); }
+    #top_menu a#contact:hover {
+      background-image: url(../images/layout/top_menu_contact_over.gif); }
+
+#hero {
+  background-image: url('../images/layout/Header.jpg');
+  background-repeat: no-repeat;
+  height: 200px; }
+  #hero h1 {
+    display: none; }
 
 #header_contents {
   color: #EEE; }
 
-#page_body {
-  padding: 20px 0; }
-
-#page_body_contents {
+#contents {
   background-color: #FFF; }
 
 .formError {
