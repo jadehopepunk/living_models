@@ -59,7 +59,7 @@ h3 {
       background-image: url(../images/layout/top_menu_contact_over.gif); }
 
 #hero {
-  background-image: url('../images/layout/header.jpg');
+  background-image: url('../images/layout/Header.jpg');
   background-repeat: no-repeat;
   height: 200px; }
   #hero h1 {
@@ -70,7 +70,7 @@ h3 {
 
 #footer {
   height: 23px;
-  background-image: url(../images/layout/footer.gif);
+  background-image: url(../images/layout/Footer.gif);
   background-repeat: no-repeat;
   padding: 30px 20px 20px 20px;
   font-size: 80%; }
