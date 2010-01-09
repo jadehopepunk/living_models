@@ -67,6 +67,18 @@ h3 {
   #hero h1 {
     display: none; }
 
+#contents {
+  background-image: url(../images/layout/full_width_background.gif);
+  background-repeat: repeat-y; }
+  #contents .main_contents {
+    background-image: url(../images/layout/full_width_header.gif);
+    background-repeat: no-repeat; }
+    #contents .main_contents .main_inner_contents {
+      background-image: url(../images/layout/full_width_footer.gif);
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      padding: 20px 20px 25px 20px;
+      overflow: hidden; }
 
 #footer {
   height: 23px;

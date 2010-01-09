@@ -12,7 +12,9 @@
           = site_section_link :contact, "Contact", '#'
         #hero
           %h1 The great kiwi solutions finder
-      #contents
-        = yield
+      #contents{:class => "#{controller_name}_#{action_name}" }
+        .main_contents
+          .main_inner_contents
+            = yield
       #footer
         &nbsp;

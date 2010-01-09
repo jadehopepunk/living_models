@@ -1,3 +1,11 @@
+#contents.projects_index {
+  background-image: none; }
+  #contents.projects_index .main_contents {
+    background-image: none; }
+    #contents.projects_index .main_contents .main_inner_contents {
+      background-image: none;
+      padding: 0; }
+
 #search {
   background-image: url(../images/layout/search_background.gif);
   background-repeat: repeat-y; }
