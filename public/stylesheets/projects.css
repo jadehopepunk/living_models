@@ -1,5 +1,6 @@
 .project_list .project {
-  overflow: hidden; }
+  overflow: hidden;
+  background-image: url(../images/projects/preview_background.gif); }
   .project_list .project img.project_photo {
     float: left;
     margin-right: 10px; }
