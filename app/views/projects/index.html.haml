@@ -8,11 +8,16 @@
     #navigation
       .contents
         .inner_contents
-          %h3.section_heading What is this?
+          %p
+            %strong Kiwis aren't just talking
+            about a better world, we're building it. This website lists
+            projects all around New Zealand / Aotearoa that are already building resilience in local
+            communities.
+            
+          %p
+            Do you know of a local success story that you would like to showcase here? 
+            = link_to "Click here to add your project.", new_project_path
           
-          %p Some stuff goes here
-          
-          lalala
 
     #body
       .contents
@@ -21,7 +26,10 @@
           .project_list
             - @projects.each do |project|
               .project
+                - if project.feature_photo
+                  = image_tag project.feature_photo.file.url(:preview), :alt => project.name, :class => "project_photo"
                 = link_to project.name || 'Unnamed project', project_path(project)
+                .summary= truncate(project.summary, :length => 190)
 
           / .home_page_section.add_project_teaser
           /   %h3 Add a project

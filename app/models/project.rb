@@ -24,4 +24,8 @@ class Project < ActiveRecord::Base
   validates_length_of :name, :location, :category, :tags, :website, :contact_email_address, :contact_name, :contact_phone, :maximum => 255, :allow_nil => true
   
   has_many :photos
+  
+  def feature_photo
+    photos.first
+  end
 end

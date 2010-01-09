@@ -1,0 +1,7 @@
+.project_list .project {
+  overflow: hidden; }
+  .project_list .project img.project_photo {
+    float: left;
+    margin-right: 10px; }
+  .project_list .project .summary {
+    font-size: 10pt; }
