@@ -1,6 +1,3 @@
-class Photo < ActiveRecord::Base
-end
-
 # == Schema Information
 #
 # Table name: photos
@@ -15,3 +12,9 @@ end
 #  updated_at        :datetime
 #
 
+class Photo < ActiveRecord::Base
+  belongs_to :project
+  has_attached_file :file
+  validates_attachment_presence :file
+  
+end
