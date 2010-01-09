@@ -1,11 +1,55 @@
 #search {
   background-image: url(../images/layout/search_background.gif);
-  background-repeat: repeat-y;
-  height: 100px; }
+  background-repeat: repeat-y; }
   #search .contents {
     background-image: url(../images/layout/search_header.gif);
-    background-repeat: no-repeat;
-    padding: 40px 30px 30px 30px; }
+    background-repeat: no-repeat; }
+    #search .contents .inner_contents {
+      background-image: url(../images/layout/search_footer.gif);
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      height: 100px;
+      padding: 40px 30px 30px 30px;
+      overflow: hidden; }
+
+#body_with_navigation {
+  overflow: hidden; }
+  #body_with_navigation p {
+    margin-top: 0; }
+  #body_with_navigation #navigation {
+    background-image: url(../images/layout/one_third_background.gif);
+    background-repeat: repeat-y;
+    width: 332px;
+    float: left; }
+    #body_with_navigation #navigation .contents {
+      background-image: url(../images/layout/one_third_header.gif);
+      background-repeat: no-repeat; }
+      #body_with_navigation #navigation .contents .inner_contents {
+        background-image: url(../images/layout/one_third_footer.gif);
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        padding: 10px 15px 20px 15px;
+        overflow: hidden; }
+        #body_with_navigation #navigation .contents .inner_contents .section_heading {
+          margin: 0;
+          height: 27px; }
+  #body_with_navigation #body {
+    background-image: url(../images/layout/two_thirds_background.gif);
+    background-repeat: repeat-y;
+    width: 666px;
+    float: left; }
+    #body_with_navigation #body .contents {
+      background-image: url(../images/layout/two_thirds_header.gif);
+      background-repeat: no-repeat; }
+      #body_with_navigation #body .contents .inner_contents {
+        background-image: url(../images/layout/two_thirds_footer.gif);
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        padding: 10px 15px 20px 15px;
+        overflow: hidden; }
+        #body_with_navigation #body .contents .inner_contents .section_heading {
+          margin: 0;
+          height: 27px; }
 
 #results {
   background-image: url(../images/layout/results_background.gif);
@@ -14,3 +58,9 @@
     background-image: url(../images/layout/results_header.gif);
     background-repeat: no-repeat;
     padding: 50px 30px 30px 360px; }
+
+.project_list .project {
+  border: 1px solid #E3E3E3;
+  padding: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px; }

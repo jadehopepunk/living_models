@@ -33,8 +33,10 @@ h3 {
   color: #333399; }
 
 #page_body {
-  width: 1000px;
-  margin: 10px auto; }
+  width: 998px;
+  margin: 10px auto;
+  background-color: #E9E9E9;
+  border: 1px solid #BCBCBC; }
 
 #top_menu {
   background-image: url('../images/layout/top_menu_background.gif');
@@ -65,12 +67,9 @@ h3 {
   #hero h1 {
     display: none; }
 
-#contents {
-  background-color: #FFF; }
 
 #footer {
   height: 23px;
-  background-image: url(../images/layout/Footer.gif);
   background-repeat: no-repeat;
   padding: 30px 20px 20px 20px;
   font-size: 80%; }

@@ -1,21 +1,32 @@
 #home_page
   #search
     .contents
-      this is the search section
+      .inner_contents
+        this is the search section
 
-  #results
-    .contents
+  #body_with_navigation
+    #navigation
+      .contents
+        .inner_contents
+          %h3.section_heading What is this?
+          
+          %p Some stuff goes here
+          
+          lalala
 
-      .home_page_section.project_list
-        %h3 Find a project
-        - @projects.each do |project|
-          .project
-            = link_to project.name || 'Unnamed project', project_path(project)
+    #body
+      .contents
+        .inner_contents
+          %h3.section_heading Search Results
+          .project_list
+            - @projects.each do |project|
+              .project
+                = link_to project.name || 'Unnamed project', project_path(project)
 
-      / .home_page_section.add_project_teaser
-      /   %h3 Add a project
-      /   - form_for :project, :url => new_project_path, :html => {:method => :get} do |f|
-      /     = f.text_field :location, :help => "Use a valid new zealand street address if possible."
-      /     = f.text_field :category, :help => "We still need to figure out how this works!"
-      /     = f.text_field :tags, :help => "We still need to figure out how this works!"
-      /     = submit_tag "Next..."
+          / .home_page_section.add_project_teaser
+          /   %h3 Add a project
+          /   - form_for :project, :url => new_project_path, :html => {:method => :get} do |f|
+          /     = f.text_field :location, :help => "Use a valid new zealand street address if possible."
+          /     = f.text_field :category, :help => "We still need to figure out how this works!"
+          /     = f.text_field :tags, :help => "We still need to figure out how this works!"
+          /     = submit_tag "Next..."

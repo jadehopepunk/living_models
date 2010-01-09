@@ -1,6 +1,6 @@
 @import mixins.sass
 
-!fixed_width= 1000px
+!fixed_width= 998px
  
 !anchor_light= #FF6633
 !anchor_dark= #CC3300
@@ -48,6 +48,8 @@ h3
 #page_body
   :width= !fixed_width
   :margin 10px auto
+  :background-color #E9E9E9
+  :border 1px solid #BCBCBC
  
 #top_menu
   :background-image url('../images/layout/top_menu_background.gif')
@@ -84,11 +86,10 @@ h3
     display: none
   
 #contents
-  :background-color #FFF
   
 #footer
   height: 23px
-  background-image: url(../images/layout/Footer.gif)
+  / background-image: url(../images/layout/Footer.gif)
   background-repeat: no-repeat
   padding: 30px 20px 20px 20px
   font-size: 80%
@@ -104,3 +105,4 @@ h3
   
 form
   +clearfix
+  
