@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100109071441) do
+ActiveRecord::Schema.define(:version => 20100111072826) do
 
   create_table "photos", :force => true do |t|
     t.string   "file_file_name"
@@ -37,5 +37,24 @@ ActiveRecord::Schema.define(:version => 20100109071441) do
     t.datetime "updated_at"
     t.string   "name"
   end
+
+  create_table "users", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email",                            :null => false
+    t.string   "crypted_password",                 :null => false
+    t.string   "password_salt",                    :null => false
+    t.string   "persistence_token",                :null => false
+    t.integer  "login_count",       :default => 0, :null => false
+    t.datetime "last_request_at"
+    t.datetime "last_login_at"
+    t.datetime "current_login_at"
+    t.string   "last_login_ip"
+    t.string   "current_login_ip"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["last_request_at"], :name => "index_users_on_last_request_at"
+  add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token"
 
 end
