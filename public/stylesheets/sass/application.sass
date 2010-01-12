@@ -58,24 +58,32 @@ h3
   :height 43px
   :top 0px
   
-  a.site_section
-    width: 120px
-    height: 43px
-    display: inline-block
-    background-repeat: no-repeat
-    
-    span
-      display: none
-      
-  a#about
-    background-image: url(../images/layout/top_menu_about.gif)    
-    &:hover
-      background-image: url(../images/layout/top_menu_about_over.gif)    
+  .tabs
+    float: left
   
-  a#contact
-    background-image: url(../images/layout/top_menu_contact.gif)
-    &:hover
-      background-image: url(../images/layout/top_menu_contact_over.gif)    
+    a.site_section
+      width: 120px
+      height: 43px
+      display: inline-block
+      background-repeat: no-repeat
+    
+      span
+        display: none
+      
+    a#about
+      background-image: url(../images/layout/top_menu_about.gif)    
+      &:hover
+        background-image: url(../images/layout/top_menu_about_over.gif)    
+  
+    a#contact
+      background-image: url(../images/layout/top_menu_contact.gif)
+      &:hover
+        background-image: url(../images/layout/top_menu_contact_over.gif)
+  
+  .account_section
+    float: right
+    margin: 10px 10px 0 0
+    font-size: 90%
   
 #hero
   :background-image url('../images/layout/Header.jpg')

@@ -8,8 +8,15 @@
     #page_body
       #header
         #top_menu
-          = site_section_link :about, "About", '#'
-          = site_section_link :contact, "Contact", '#'
+          .tabs
+            = site_section_link :about, "About", '#'
+            = site_section_link :contact, "Contact", '#'
+          .account_section
+            - if logged_in?
+              = "Welcome #{current_user.name},"
+              = link_to "logout", logout_path, :method => :delete
+            - else
+              = link_to "login", login_path
         #hero
           %h1 The great kiwi solutions finder
       #contents{:class => "#{controller_name}_#{action_name}" }
