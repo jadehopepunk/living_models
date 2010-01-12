@@ -4,6 +4,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :projects, :has_many => :photos
   map.resources :photos, :user_sessions, :users
-  map.resources :users, :active_scaffold => true  
+  
+  map.namespace :admin do |admin|
+    admin.resources :users, :projects, :photos, :active_scaffold => true  
+  end
   map.root :controller => "projects"
 end

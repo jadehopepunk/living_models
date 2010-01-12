@@ -18,5 +18,8 @@
               = link_to "logout", logout_path, :method => :delete
             - else
               = link_to "login", login_path
+      #admin_header
+        = link_to "Users", admin_users_path
+        = link_to "Projects", admin_projects_path, :class => "last"
       #admin_contents
         = yield
