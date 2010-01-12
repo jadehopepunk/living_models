@@ -12,6 +12,7 @@ describe User do
   end
 end
 
+
 # == Schema Information
 #
 # Table name: users
@@ -29,5 +30,6 @@ end
 #  current_login_at  :datetime
 #  last_login_ip     :string(255)
 #  current_login_ip  :string(255)
+#  is_admin          :boolean(1)      default(FALSE)
 #
 

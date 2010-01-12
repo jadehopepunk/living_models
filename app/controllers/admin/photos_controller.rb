@@ -1,6 +1,5 @@
 module Admin
-  class PhotosController < ApplicationController
-    layout "admin"
+  class PhotosController < AdminController
     active_scaffold :photos
   
   end

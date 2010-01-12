@@ -1,3 +1,15 @@
+
+class User < ActiveRecord::Base
+  acts_as_authentic
+  
+  attr_protected :is_admin
+  
+  def name
+    email.split('@').first.titleize
+  end
+end
+
+
 # == Schema Information
 #
 # Table name: users
@@ -15,14 +27,6 @@
 #  current_login_at  :datetime
 #  last_login_ip     :string(255)
 #  current_login_ip  :string(255)
+#  is_admin          :boolean(1)      default(FALSE)
 #
-
-
-class User < ActiveRecord::Base
-  acts_as_authentic
-  
-  def name
-    email.split('@').first.titleize
-  end
-end
 
