@@ -1,3 +1,16 @@
+class Project < ActiveRecord::Base
+  validates_presence_of :name, :location, :category, :summary, :contact_email_address
+  validates_length_of :name, :location, :category, :tags, :website, :contact_email_address, :contact_name, :contact_phone, :maximum => 255, :allow_nil => true
+  
+  has_many :photos
+  
+  named_scope :published, :conditions => {:published => true}
+  
+  def feature_photo
+    photos.first
+  end
+end
+
 # == Schema Information
 #
 # Table name: projects
@@ -17,15 +30,6 @@
 #  created_at            :datetime
 #  updated_at            :datetime
 #  name                  :string(255)
+#  published             :boolean(1)      default(FALSE)
 #
 
-class Project < ActiveRecord::Base
-  validates_presence_of :name, :location, :category, :summary, :contact_email_address
-  validates_length_of :name, :location, :category, :tags, :website, :contact_email_address, :contact_name, :contact_phone, :maximum => 255, :allow_nil => true
-  
-  has_many :photos
-  
-  def feature_photo
-    photos.first
-  end
-end
