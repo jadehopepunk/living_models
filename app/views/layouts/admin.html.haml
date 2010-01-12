@@ -1,0 +1,22 @@
+!!!strict
+%html
+  %head
+    %title Kiwis Can Do (Administration)
+    = stylesheet_link_tag :all
+    = javascript_include_tag :default, :all
+    = active_scaffold_includes
+  %body.admin
+    #page_body
+      #header
+        #top_menu
+          .tabs
+            = site_section_link :about, "About", '#'
+            = site_section_link :contact, "Contact", '#'
+          .account_section
+            - if logged_in?
+              = "Welcome #{current_user.name},"
+              = link_to "logout", logout_path, :method => :delete
+            - else
+              = link_to "login", login_path
+      #admin_contents
+        = yield

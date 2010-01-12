@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.logout 'logout', :controller => :user_sessions, :action => :destroy
   
   map.resources :projects, :has_many => :photos
-  map.resources :photos
-  map.resources :user_sessions
+  map.resources :photos, :user_sessions, :users
+  map.resources :users, :active_scaffold => true  
   map.root :controller => "projects"
 end
