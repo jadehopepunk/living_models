@@ -109,3 +109,20 @@ form {
     height: 0;
     clear: both;
     visibility: hidden; }
+
+.flashMessages {
+  clear: both;
+  color: #FFF; }
+  .flashMessages .flashMessage {
+    margin-bottom: 1px; }
+    .flashMessages .flashMessage .wrap {
+      padding: 6px 0 5px 0;
+      text-align: center; }
+  .flashMessages .notice {
+    color: #003300;
+    background-color: #99cc66;
+    border-bottom: 1px solid #339900; }
+  .flashMessages .warning, .flashMessages .error {
+    color: #660000;
+    background-color: #ff6666;
+    border-bottom: 1px solid #993333; }

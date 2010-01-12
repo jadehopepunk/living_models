@@ -11,6 +11,7 @@
         = render :partial => 'layouts/header'
         #hero
           %h1 The great kiwi solutions finder
+      = flash_div      
       #contents{:class => "#{controller_name}_#{action_name}" }
         .main_contents
           .main_inner_contents
