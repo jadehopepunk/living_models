@@ -4,7 +4,8 @@ body {
   font-family: verdana, "Lucida Grande", arial, helvetica, sans-serif;
   color: #333;
   background-color: #EEE;
-  line-height: 120%; }
+  line-height: 120%;
+  font-size: 12pt; }
 
 a:link, a:visited {
   color: #cc3300;

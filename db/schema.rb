@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100118065131) do
+ActiveRecord::Schema.define(:version => 20100118070034) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20100118065131) do
 
   create_table "projects", :force => true do |t|
     t.string   "location"
-    t.string   "category"
     t.string   "tags"
     t.text     "summary"
     t.text     "goals"
@@ -44,7 +43,10 @@ ActiveRecord::Schema.define(:version => 20100118065131) do
     t.datetime "updated_at"
     t.string   "name"
     t.boolean  "published",             :default => false
+    t.integer  "category_id"
   end
+
+  add_index "projects", ["category_id"], :name => "index_projects_on_category_id"
 
   create_table "users", :force => true do |t|
     t.datetime "created_at"

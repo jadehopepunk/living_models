@@ -1,8 +1,9 @@
 class Project < ActiveRecord::Base
-  validates_presence_of :name, :location, :category, :summary, :contact_email_address
-  validates_length_of :name, :location, :category, :tags, :website, :contact_email_address, :contact_name, :contact_phone, :maximum => 255, :allow_nil => true
+  validates_presence_of :name, :location, :category_id, :summary, :contact_email_address
+  validates_length_of :name, :location, :tags, :website, :contact_email_address, :contact_name, :contact_phone, :maximum => 255, :allow_nil => true
   
   has_many :photos
+  belongs_to :category
   
   named_scope :published, :conditions => {:published => true}
   
@@ -11,13 +12,13 @@ class Project < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
 #
 # Table name: projects
 #
 #  id                    :integer(4)      not null, primary key
 #  location              :string(255)
-#  category              :string(255)
 #  tags                  :string(255)
 #  summary               :text
 #  goals                 :text
@@ -31,5 +32,6 @@ end
 #  updated_at            :datetime
 #  name                  :string(255)
 #  published             :boolean(1)      default(FALSE)
+#  category_id           :integer(4)
 #
 
