@@ -7,7 +7,7 @@ module ProjectsHelper
   end
   
   def project_display_fields
-    %w(location category tags contact_name contact_email_address contact_phone website summary goals outcomes future_plans)
+    %w(location category_name tags contact_name contact_email_address contact_phone website summary goals outcomes future_plans)
   end
     
 end

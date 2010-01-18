@@ -7,6 +7,8 @@ class Project < ActiveRecord::Base
   
   named_scope :published, :conditions => {:published => true}
   
+  delegate :name, :to => :category, :prefix => :category, :allow_nil => true
+  
   def feature_photo
     photos.first
   end
