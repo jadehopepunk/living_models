@@ -2,7 +2,20 @@
   #search
     .contents
       .inner_contents
-        this is the search section
+        .search_section
+          %h3.section_title Choose Categories
+          .search_body.categories
+            - Category.all.each do |category|
+              = category_icon_link(category)
+        
+        .search_section
+          %h3.section_title Choose Regions
+          .search_body
+        
+        .search_section.last
+          %h3.section_title Choose Keywords
+          .search_body
+        
 
   #body_with_navigation
     #navigation
@@ -22,7 +35,7 @@
     #body
       .contents
         .inner_contents
-          %h3.section_heading Latest Success Stories
+          %h3.section_title Latest Success Stories
           .project_list
             - @projects.each do |project|
               .project

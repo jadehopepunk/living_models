@@ -15,5 +15,9 @@ class Category < ActiveRecord::Base
   validates_presence_of :name, :description
   validates_length_of :name, :maximum => 50, :allow_nil => true
   validates_length_of :description, :maximum => 255, :allow_nil => true
+  
+  def has_data?
+    !projects.empty?
+  end
 end
 
