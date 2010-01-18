@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :photos, :user_sessions, :users
   
   map.namespace :admin do |admin|
-    admin.resources :users, :projects, :photos, :active_scaffold => true  
+    admin.resources :users, :projects, :photos, :categories, :active_scaffold => true  
   end
   map.root :controller => "projects"
 end
