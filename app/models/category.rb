@@ -19,5 +19,9 @@ class Category < ActiveRecord::Base
   def has_data?
     !projects.empty?
   end
+  
+  def label
+    name.downcase.strip
+  end
 end
 

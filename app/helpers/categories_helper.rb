@@ -12,7 +12,7 @@ module CategoriesHelper
   end
   
   def category_icon(category)
-    image_tag('categories/sample.gif', :alt => category.name, :title => category.name, :class => category_icon_css_class(category))
+    image_tag("category_icons/#{category.label}.jpg", :alt => category.name, :title => category.name, :class => category_icon_css_class(category))
   end
   
   def category_icon_css_class(category)

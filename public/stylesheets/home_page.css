@@ -16,7 +16,7 @@
       background-image: url(../images/layout/search_footer.gif);
       background-repeat: no-repeat;
       background-position: bottom left;
-      height: 100px;
+      height: 200px;
       padding: 10px 0px 30px 10px;
       overflow: hidden; }
       #search .contents .inner_contents .search_section {
@@ -31,7 +31,10 @@
         #search .contents .inner_contents .search_section .search_body {
           padding: 0 0 10px 10px; }
         #search .contents .inner_contents .search_section .categories {
-          padding: 5px 10px 10px 30px; }
+          padding: 5px 0 10px 10px;
+          margin-right: -10px; }
+          #search .contents .inner_contents .search_section .categories a {
+            margin-right: 20px; }
         #search .contents .inner_contents .search_section .no_data {
           opacity: 0.5; }
       #search .contents .inner_contents .last {
@@ -53,7 +56,7 @@
         background-image: url(../images/layout/one_third_footer.gif);
         background-repeat: no-repeat;
         background-position: bottom left;
-        padding: 20px 15px 20px 15px;
+        padding: 20px 20px 20px 20px;
         overflow: hidden; }
         #body_with_navigation #navigation .contents .inner_contents .section_title {
           margin: 0;
@@ -70,7 +73,7 @@
         background-image: url(../images/layout/two_thirds_footer.gif);
         background-repeat: no-repeat;
         background-position: bottom left;
-        padding: 10px 15px 20px 15px;
+        padding: 10px 20px 20px 20px;
         overflow: hidden; }
         #body_with_navigation #body .contents .inner_contents .section_title {
           margin: 0 0 10px 0;
