@@ -2,10 +2,7 @@
   %h3= @project.name
   
   - project_display_fields.each do |key|
-    - if key == 'tags'
-      = project_field_with_value key, @project.tags.join(', ')
-    - else
-      = project_field key
+    = project_field key
     
   .photos
     - @project.photos.each do |photo|
