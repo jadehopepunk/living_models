@@ -1,8 +1,13 @@
 class ProjectsController < InheritedResources::Base
   before_filter :load_category
+  before_filter :load_tag_cloud, :only => :index
   before_filter :require_admin, :except => [:new, :create, :index, :show]
 
   protected
+
+    def load_tag_cloud
+      @tags = Project.top_tags(30).sort_by(&:name)
+    end
 
     def collection
       @projects ||= end_of_association_chain.published.paginate(:page => params[:page])

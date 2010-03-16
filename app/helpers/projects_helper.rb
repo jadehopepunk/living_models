@@ -13,5 +13,20 @@ module ProjectsHelper
   def project_display_fields
     %w(location category_name tag_list contact_name contact_email_address contact_phone website summary goals outcomes future_plans)
   end
+
+  def tag_cloud(tags, classes)
+    return [] if tags.empty?
+
+    max_count = tags.map(&:count).max.to_f
+    
+    tags.each do |tag|
+      if max_count == 1
+        index = 0
+      else
+        index = (((tag.count - 1) / (max_count - 1)) * (classes.size - 1)).round
+      end
+      yield tag, classes[index]
+    end
+  end
     
 end
