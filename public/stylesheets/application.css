@@ -14,6 +14,9 @@ a:link, a:visited {
   a:link img, a:visited img {
     border: 0; }
 
+img {
+  border: 0; }
+
 a:hover {
   color: #ff6633;
   text-decoration: underline; }
@@ -142,3 +145,7 @@ form {
   font-size: 120%; }
 .tag_cloud .tag3 {
   font-size: 160%; }
+
+.region_selector {
+  width: 130px;
+  margin: 0 auto; }

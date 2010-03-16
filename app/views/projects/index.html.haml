@@ -10,15 +10,16 @@
         
         .search_section
           %h3.section_title Choose Regions
-          .search_body
-        
+          .search_body.region_selector
+            = image_tag 'maps/nz/none.png', :usemap => '#region_map'
+            %map#region_map{:name => 'region_map'}
+              %area{:href => "#north", :alt => "North Island", :title => "North Island", :shape => "poly", :coords => "53,1,126,3,122,94,88,96,70,71"}
+              %area{:href => "#south", :alt => "South Island", :title => "South Island", :shape => "poly", :coords => "59,72,82,84,85,103,84,165,8,173,3,150,5,73"}              
         .search_section.last
           %h3.section_title Choose Keywords
           .search_body.tag_cloud
             - tag_cloud(@tags, %w(tag1 tag2 tag3)) do |tag, css_class|
               = link_to tag.name, '#', :class => css_class
-            
-        
 
   #body_with_navigation
     #navigation
