@@ -1,4 +1,6 @@
 class Project < ActiveRecord::Base
+  acts_as_taggable_on :tags
+
   validates_presence_of :name, :location, :category_id, :summary, :contact_email_address
   validates_length_of :name, :location, :tags, :website, :contact_email_address, :contact_name, :contact_phone, :maximum => 255, :allow_nil => true
   
