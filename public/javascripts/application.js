@@ -28,7 +28,7 @@ var Filters = Class.create({
   updateRegionMap: function() {
     var name = 'none';
     if (this.selected_regions.length > 0) {
-      name = this.selected_regions.map(function(region_name) {return region_name.gsub(' ', '').underscore();}).join('_');
+      name = this.selected_regions.sort().map(function(region_name) {return region_name.gsub(' ', '').underscore();}).join('_');
     }
     var full_name = '/images/maps/nz/' + name + '.png'
     $('region_map_image').src = full_name;
