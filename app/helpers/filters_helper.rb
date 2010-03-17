@@ -35,7 +35,7 @@ module FiltersHelper
   end
   
   def region_image
-    image_tag 'maps/nz/none.png', :usemap => '#region_map'
+    image_tag 'maps/nz/none.png', :usemap => '#region_map', :id => 'region_map_image'
   end
   
   def region_image_map

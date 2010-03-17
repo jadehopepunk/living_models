@@ -21,7 +21,17 @@ var Filters = Class.create({
     } else {
       this.selected_regions.push(name);
     }
+    this.updateRegionMap();
     this.loadDataForFilters();
+  },
+  
+  updateRegionMap: function() {
+    var name = 'none';
+    if (this.selected_regions.length > 0) {
+      name = this.selected_regions.map(function(region_name) {return region_name.gsub(' ', '').underscore();}).join('_');
+    }
+    var full_name = '/images/maps/nz/' + name + '.png'
+    $('region_map_image').src = full_name;
   },
   
   loadDataForFilters: function() {
