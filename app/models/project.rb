@@ -19,6 +19,15 @@ class Project < ActiveRecord::Base
     end
   }
   
+  named_scope :for_regions,  lambda {|region_names|
+    if region_names.empty?
+      {}
+    else
+      quoted_names = region_names.map {|name| ActiveRecord::Base.connection.quote(name)}
+      {:conditions => "region IN (#{quoted_names.join(',')})"}
+    end
+  }
+  
   delegate :name, :to => :category, :prefix => :category, :allow_nil => true
   
   def feature_photo

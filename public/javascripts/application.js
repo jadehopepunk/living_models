@@ -2,6 +2,8 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 var Filters = Class.create({
+  selected_regions: [],
+  
   initialize: function(container_id) {
     this.container_id = container_id;
   },
@@ -13,8 +15,13 @@ var Filters = Class.create({
   },
   
   
-  toggleRegion: function() {
-    alert('toggle region');
+  toggleRegion: function(name) {
+    if (this.selected_regions.include(name)) {
+      this.selected_regions = this.selected_regions.without(name)
+    } else {
+      this.selected_regions.push(name);
+    }
+    this.loadDataForFilters();
   },
   
   loadDataForFilters: function() {
@@ -34,14 +41,19 @@ var Filters = Class.create({
   
   currentFilterParameters: function() {
     return {
-      'category_ids': this.activeCategoryIds()
+      'category_ids': this.activeCategoryIds().join(','),
+      'region_names': this.activeRegionNames().join(',')
     };
   },
   
   activeCategoryIds: function() {
     return $$('#categories a.active').map(function(element) {
       return element.id.split('_').last();
-    }).join(',');
+    });
+  },
+  
+  activeRegionNames: function() {
+    return this.selected_regions;
   },
   
   displayLoadingData: function() {

@@ -18,11 +18,19 @@ class ProjectsController < InheritedResources::Base
     end
 
     def collection
-      @projects ||= end_of_association_chain.for_categories(category_ids).published.paginate(:page => params[:page])
+      @projects ||= end_of_association_chain.for_categories(category_ids).for_regions(region_names).published.paginate(:page => params[:page])
     end
     
     def category_ids
-      params[:category_ids] ? params[:category_ids].split(',') : []
+      filter_set(:category_ids)
+    end
+    
+    def region_names
+      filter_set(:region_names)
+    end
+    
+    def filter_set(key)
+      params[key] ? params[key].split(',') : []
     end
         
 end
