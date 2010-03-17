@@ -25,6 +25,7 @@ after "deploy:update_code" do
   link_from_shared_to_current('config')
 end
 after "deploy", "deploy:cleanup"
+after "deploy:migrations", "deploy:cleanup"
 
 
 def link_from_shared_to_current(path, dest_path = path)
