@@ -4,9 +4,8 @@
       .inner_contents
         .search_section
           %h3.section_title Choose Categories
-          .search_body.categories
-            - Category.all.each do |category|
-              = category_icon_link(category)
+          #categories.search_body.categories
+            = category_filters
         
         .search_section
           %h3.section_title Choose Regions
@@ -40,12 +39,5 @@
       .contents
         .inner_contents
           %h3.section_title Latest Success Stories
-          .project_list
-            - @projects.each do |project|
-              .project
-                - if project.feature_photo
-                  = image_tag project.feature_photo.file.url(:preview), :alt => project.name, :class => "project_photo"
-                = link_to project.name || 'Unnamed project', project_path(project)
-                .summary= truncate(project.summary, :length => 190)
-                
-          = will_paginate @projects
+          #project_notices
+          = render :partial => 'list'

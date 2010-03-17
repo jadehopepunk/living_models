@@ -9,6 +9,14 @@ class Project < ActiveRecord::Base
   
   named_scope :published, :conditions => {:published => true}
   
+  named_scope :for_categories, lambda {|category_ids|
+    if category_ids.empty?
+      {}
+    else
+      {:conditions => "category_id IN (#{category_ids.map(&:to_i).join(',')})"}
+    end
+  }
+  
   delegate :name, :to => :category, :prefix => :category, :allow_nil => true
   
   def feature_photo

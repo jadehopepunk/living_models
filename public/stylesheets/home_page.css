@@ -33,10 +33,14 @@
         #search .contents .inner_contents .search_section .categories {
           padding: 5px 0 10px 10px;
           margin-right: -10px; }
-          #search .contents .inner_contents .search_section .categories a {
-            margin-right: 20px; }
+          #search .contents .inner_contents .search_section .categories img {
+            margin-right: 16px; }
+          #search .contents .inner_contents .search_section .categories a img {
+            border: 2px solid white; }
+          #search .contents .inner_contents .search_section .categories a.active img {
+            border: 2px solid orange; }
         #search .contents .inner_contents .search_section .no_data {
-          opacity: 0.5; }
+          opacity: 0.3; }
       #search .contents .inner_contents .last {
         margin-right: 0; }
 
