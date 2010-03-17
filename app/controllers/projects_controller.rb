@@ -1,5 +1,4 @@
 class ProjectsController < InheritedResources::Base
-  before_filter :load_category
   before_filter :require_admin, :except => [:new, :create, :index, :show]
 
   def index
@@ -25,13 +24,5 @@ class ProjectsController < InheritedResources::Base
     def category_ids
       params[:category_ids] ? params[:category_ids].split(',') : []
     end
-    
-    def begin_of_association_chain
-      @category
-    end
-    
-    def load_category
-      @category = Category.find(params[:category_id]) if params[:category_id]
-    end
-  
+        
 end

@@ -1,15 +1,20 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 
-var CategoryFilters = Class.create({
+var Filters = Class.create({
   initialize: function(container_id) {
     this.container_id = container_id;
   },
   
-  toggleCategory: function(category_id, link) {
+  toggleCategory: function(link) {
     link.blur();
     link.toggleClassName('active');
     this.loadDataForFilters();
+  },
+  
+  
+  toggleRegion: function() {
+    alert('toggle region');
   },
   
   loadDataForFilters: function() {

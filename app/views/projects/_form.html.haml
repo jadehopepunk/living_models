@@ -2,8 +2,9 @@
   = f.error_messages
   = f.text_field :name, :required => true, :help => "What is this project called?"
   = f.text_field :location, :required => true, :help => "Use a valid new zealand street address if possible."
+  = f.select :region, Project::REGIONS, :required => true, :include_blank => true
   = f.select :category_id, Category.all.map {|category| [category.name, category.id]}, :required => true, :include_blank => true
-  = f.text_field :tag_list, :help => "We still need to figure out how this works!"
+  = f.text_field :tag_list, :help => "Separate tags with commas"
   = f.text_field :contact_name
   = f.text_field :contact_email_address, :required => true
   = f.text_field :contact_phone

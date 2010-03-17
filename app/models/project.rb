@@ -1,8 +1,10 @@
 class Project < ActiveRecord::Base
+  REGIONS = ["North Island", "South Island"]
+  
   acts_as_taggable_on :tags
 
-  validates_presence_of :name, :location, :category_id, :summary, :contact_email_address
-  validates_length_of :name, :location, :tags, :website, :contact_email_address, :contact_name, :contact_phone, :maximum => 255, :allow_nil => true
+  validates_presence_of :name, :location, :region, :category_id, :summary, :contact_email_address
+  validates_length_of :name, :location, :website, :contact_email_address, :contact_name, :contact_phone, :maximum => 255, :allow_nil => true
   
   has_many :photos
   belongs_to :category
@@ -25,13 +27,14 @@ class Project < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: projects
 #
 #  id                    :integer(4)      not null, primary key
 #  location              :string(255)
-#  tags                  :string(255)
+#  existing_tag_string   :string(255)
 #  summary               :text
 #  goals                 :text
 #  outcomes              :text
@@ -45,5 +48,6 @@ end
 #  name                  :string(255)
 #  published             :boolean(1)      default(FALSE)
 #  category_id           :integer(4)
+#  region                :string(255)
 #
 

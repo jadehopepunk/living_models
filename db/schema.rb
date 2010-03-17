@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100316075913) do
+ActiveRecord::Schema.define(:version => 20100317090551) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20100316075913) do
     t.string   "name"
     t.boolean  "published",             :default => false
     t.integer  "category_id"
+    t.string   "region"
   end
 
   add_index "projects", ["category_id"], :name => "index_projects_on_category_id"

@@ -13,13 +13,14 @@ describe Project do
 end
 
 
+
 # == Schema Information
 #
 # Table name: projects
 #
 #  id                    :integer(4)      not null, primary key
 #  location              :string(255)
-#  tags                  :string(255)
+#  existing_tag_string   :string(255)
 #  summary               :text
 #  goals                 :text
 #  outcomes              :text
@@ -33,5 +34,6 @@ end
 #  name                  :string(255)
 #  published             :boolean(1)      default(FALSE)
 #  category_id           :integer(4)
+#  region                :string(255)
 #
 
