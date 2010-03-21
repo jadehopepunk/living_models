@@ -48,4 +48,11 @@ module FiltersHelper
     tag(:area, :href => "#", :alt => name, :title => name, :shape => "poly", :coords => coords, :onclick => "filters.toggleRegion('#{name}'); return false;")
   end
   
+  def tag_filters
+    tags = Project.top_tags(30).sort_by(&:name)
+    tag_cloud(tags, %w(tag1 tag2 tag3)) do |tag, css_class|
+      link_to_function tag.name, 'filters.toggleTag(this)', :class => css_class
+    end.join(' ')
+  end
+  
 end

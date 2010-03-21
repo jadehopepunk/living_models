@@ -19,7 +19,7 @@ module ProjectsHelper
 
     max_count = tags.map(&:count).max.to_f
     
-    tags.each do |tag|
+    tags.map do |tag|
       if max_count == 1
         index = 0
       else

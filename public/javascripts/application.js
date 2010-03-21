@@ -9,11 +9,8 @@ var Filters = Class.create({
   },
   
   toggleCategory: function(link) {
-    link.blur();
-    link.toggleClassName('active');
-    this.loadDataForFilters();
+    this.toggleFilterLink(link);
   },
-  
   
   toggleRegion: function(name) {
     if (this.selected_regions.include(name)) {
@@ -23,6 +20,16 @@ var Filters = Class.create({
     }
     this.updateRegionMap();
     this.loadDataForFilters();
+  },
+  
+  toggleTag: function(link) {
+    this.toggleFilterLink(link);
+  },
+  
+  toggleFilterLink: function(link) {
+    link.blur();
+    link.toggleClassName('active');
+    this.loadDataForFilters();    
   },
   
   updateRegionMap: function() {

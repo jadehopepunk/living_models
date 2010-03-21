@@ -2,7 +2,6 @@ class ProjectsController < InheritedResources::Base
   before_filter :require_admin, :except => [:new, :create, :index, :show]
 
   def index
-    load_tag_cloud
     collection
     
     respond_to do |format|
@@ -12,10 +11,6 @@ class ProjectsController < InheritedResources::Base
   end
 
   protected
-
-    def load_tag_cloud
-      @tags = Project.top_tags(30).sort_by(&:name)
-    end
 
     def collection
       @projects ||= end_of_association_chain.for_categories(category_ids).for_regions(region_names).published.paginate(:page => params[:page])
