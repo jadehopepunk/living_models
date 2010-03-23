@@ -13,7 +13,7 @@ class ProjectsController < InheritedResources::Base
   protected
 
     def collection
-      @projects ||= filtered_scope(end_of_association_chain).published.paginate(:page => params[:page])
+      @projects ||= filtered_scope(end_of_association_chain).published.paginate(:page => params[:page], :order => "created_at DESC")
     end
     
     def filtered_scope(parent_scope)
