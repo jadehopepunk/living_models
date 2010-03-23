@@ -13,7 +13,11 @@ class ProjectsController < InheritedResources::Base
   protected
 
     def collection
-      @projects ||= end_of_association_chain.for_categories(category_ids).for_regions(region_names).published.paginate(:page => params[:page])
+      @projects ||= filtered_scope(end_of_association_chain).published.paginate(:page => params[:page])
+    end
+    
+    def filtered_scope(parent_scope)
+      parent_scope.for_categories(category_ids).for_regions(region_names).tagged_with(tags, :any => true)
     end
     
     def category_ids
@@ -22,6 +26,10 @@ class ProjectsController < InheritedResources::Base
     
     def region_names
       filter_set(:region_names)
+    end
+    
+    def tags
+      filter_set(:tags)
     end
     
     def filter_set(key)

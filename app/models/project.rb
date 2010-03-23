@@ -19,7 +19,7 @@ class Project < ActiveRecord::Base
     end
   }
   
-  named_scope :for_regions,  lambda {|region_names|
+  named_scope :for_regions, lambda {|region_names|
     if region_names.empty?
       {}
     else

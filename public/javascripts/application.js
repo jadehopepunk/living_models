@@ -59,7 +59,8 @@ var Filters = Class.create({
   currentFilterParameters: function() {
     return {
       'category_ids': this.activeCategoryIds().join(','),
-      'region_names': this.activeRegionNames().join(',')
+      'region_names': this.activeRegionNames().join(','),
+      'tags': this.activeTags().join(',')
     };
   },
   
@@ -71,6 +72,12 @@ var Filters = Class.create({
   
   activeRegionNames: function() {
     return this.selected_regions;
+  },
+  
+  activeTags: function() {
+    return $$('#tags a.active').map(function(element) {
+      return element.innerHTML;
+    });
   },
   
   displayLoadingData: function() {
