@@ -78,7 +78,8 @@ h3 {
 #hero {
   background-image: url('../images/layout/Header.jpg');
   background-repeat: no-repeat;
-  height: 200px; }
+  height: 200px;
+  display: block; }
   #hero h1 {
     display: none; }
 

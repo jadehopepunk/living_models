@@ -9,8 +9,8 @@
     #page_body
       #header
         = render :partial => 'layouts/header'
-        #hero
-          %h1 The great kiwi solutions finder
+        %a#hero{:href => '/', :alt => "Bank of real solutions", :title => "Bank of real solutions"}
+          %h1 Bank of real solutions
       = flash_div      
       #contents{:class => "#{controller_name}_#{action_name}" }
         .main_contents
