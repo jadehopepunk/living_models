@@ -1,5 +1,4 @@
 = image_tag @photo.file.url
 
 .actions
-  = link_to 'Edit', edit_project_photo_path(@project, @photo)
-  = link_to 'Back to index', projects_path
+  = link_to 'Back to project', project_path(@project)

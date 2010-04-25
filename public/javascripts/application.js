@@ -91,6 +91,30 @@ var Filters = Class.create({
   clearNotice: function() {
     $('project_notices').update('');
   }
+});
+
+var ImageBrowser = Class.create({
+  initialize: function(container_id) {
+    this.container = $(container_id);
+    this.container.select(".thumbnail img").each(function(thumb) {
+      thumb.observe('click', this.onThumbClicked.curry(thumb).bind(this))
+    }.bind(this));
+  },
   
+  onThumbClicked: function(thumb, event) {
+    var src = this.mainUrl(thumb.src);
+    this.setMainUrl(src);
+    this.container.select(".thumbnail img.selected").each(function(t) {
+      t.removeClassName('selected');
+    });
+    thumb.addClassName('selected');
+  },
   
+  mainUrl: function(thumb_url) {
+    return thumb_url.sub('/thumb/', '/main/').sub(/\?[0-9]*$/, '');
+  },
+  
+  setMainUrl: function(url) {
+    this.container.select(".main_photo img")[0].src = url;
+  }
 });

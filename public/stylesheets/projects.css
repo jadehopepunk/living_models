@@ -35,9 +35,9 @@
   background-color: orange;
   color: white; }
 
-.all_photos_container {
+#all_photos_container {
   float: left; }
-  .all_photos_container .main_photo_container {
+  #all_photos_container .main_photo_container {
     display: block;
     width: 659px;
     height: 458px;
@@ -45,23 +45,23 @@
     background-repeat: no-repeat;
     border-collapse: separate;
     padding-top: 1px; }
-    .all_photos_container .main_photo_container .main_photo {
+    #all_photos_container .main_photo_container .main_photo {
       margin: 20px 0 0 20px;
       width: 585px;
       height: 390px;
       overflow: hidden;
       border-collapse: separate; }
-  .all_photos_container .thumbnails {
+  #all_photos_container .thumbnails {
     *display: inline-block;
     margin-left: 10px;
     margin-bottom: 1em; }
-    .all_photos_container .thumbnails:after {
+    #all_photos_container .thumbnails:after {
       content: " ";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .all_photos_container .thumbnails .thumbnail_container {
+    #all_photos_container .thumbnails .thumbnail_container {
       display: block;
       width: 120px;
       height: 90px;
@@ -70,12 +70,16 @@
       border-collapse: separate;
       padding-top: 1px;
       float: left; }
-      .all_photos_container .thumbnails .thumbnail_container .thumbnail {
+      #all_photos_container .thumbnails .thumbnail_container .thumbnail {
         margin: 5px 0 0 5px;
         width: 108px;
         height: 75px;
         overflow: hidden;
         border-collapse: separate; }
+        #all_photos_container .thumbnails .thumbnail_container .thumbnail img {
+          opacity: 0.6; }
+        #all_photos_container .thumbnails .thumbnail_container .thumbnail img.selected {
+          opacity: 1.0; }
 
 .project_details h4 {
   margin-bottom: 0; }

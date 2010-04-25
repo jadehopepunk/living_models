@@ -139,3 +139,12 @@ form {
 .region_selector {
   width: 130px;
   margin: 0 auto; }
+
+.actions a {
+  padding-right: 10px;
+  border-right: 2px solid #333;
+  margin-right: 10px; }
+.actions a:last-child {
+  padding-right: 0;
+  border-right: 0;
+  margin-right: 0; }
