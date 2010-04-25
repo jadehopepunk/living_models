@@ -35,17 +35,33 @@
   background-color: orange;
   color: white; }
 
-.main_photo_container {
-  display: block;
-  width: 659px;
-  height: 458px;
-  background-image: url(../images/photo_frame.jpg);
-  background-repeat: no-repeat;
-  border-collapse: separate;
-  padding-top: 1px; }
-  .main_photo_container .main_photo {
-    margin: 20px 0 0 20px;
-    width: 585px;
-    height: 390px;
-    overflow: hidden;
-    border-collapse: separate; }
+.all_photos_container {
+  float: left; }
+  .all_photos_container .main_photo_container {
+    display: block;
+    width: 659px;
+    height: 458px;
+    background-image: url(../images/photo_frame.jpg);
+    background-repeat: no-repeat;
+    border-collapse: separate;
+    padding-top: 1px; }
+    .all_photos_container .main_photo_container .main_photo {
+      margin: 20px 0 0 20px;
+      width: 585px;
+      height: 390px;
+      overflow: hidden;
+      border-collapse: separate; }
+
+.project_details h4 {
+  margin-bottom: 0; }
+.project_details h3 {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 22pt;
+  font-weight: normal;
+  line-height: 100%; }
+.project_details .contact .website {
+  margin-top: 1em; }
+.project_details .descriptions {
+  clear: left;
+  font-size: 12pt; }

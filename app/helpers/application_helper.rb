@@ -13,5 +13,15 @@ module ApplicationHelper
     rows = keys.collect { |key| content_tag(:div, content_tag(:div, flash[key], :class => 'wrap'), {:id => key, :class => "flashMessage #{key}"}) if flash[key] }
     content_tag(:div, rows.join("\n"), :class => 'flashMessages', :id => 'flash_container')
   end
+  
+  def with_protocol(url)
+    regex = /^https?:\/\//
+    (url =~ regex) ? url : "http://#{url}"
+  end
+
+  def without_protocol(url)
+    regex = /^https?:\/\//
+    (url =~ regex) ? url.sub(regex, '') : url
+  end
 
 end
