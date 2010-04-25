@@ -14,7 +14,11 @@
 
 class Photo < ActiveRecord::Base
   belongs_to :project
-  has_attached_file :file, :styles => {:preview => "200x115>"}
+  has_attached_file :file, :styles => {
+    :main => "585x390#",
+    :preview => "200x115#"
+  }
+    
   validates_attachment_presence :file
   
 end

@@ -1,12 +1,17 @@
 .project
   %h3= @project.name
+
+  .main_photo_container
+    .main_photo
+      - if @project.photos.first
+        = image_tag @project.photos.first.file.url(:main)
+
+  .photos
+    - @project.photos.each do |photo|
+      = image_tag photo.file.url(:preview)
   
   - project_display_fields.each do |key|
     = project_field key
-    
-  .photos
-    - @project.photos.each do |photo|
-      = image_tag photo.file.url
 
   .actions
     = link_to 'Edit', edit_project_path(@project)

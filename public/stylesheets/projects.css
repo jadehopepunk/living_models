@@ -5,6 +5,8 @@
   .project_list .project img.project_photo {
     float: left;
     margin-right: 10px; }
+  .project_list .project .details {
+    margin-left: 210px; }
   .project_list .project .summary {
     font-size: 10pt; }
 
@@ -32,3 +34,18 @@
 .tag_cloud a.active {
   background-color: orange;
   color: white; }
+
+.main_photo_container {
+  display: block;
+  width: 659px;
+  height: 458px;
+  background-image: url(../images/photo_frame.jpg);
+  background-repeat: no-repeat;
+  border-collapse: separate;
+  padding-top: 1px; }
+  .main_photo_container .main_photo {
+    margin: 20px 0 0 20px;
+    width: 585px;
+    height: 390px;
+    overflow: hidden;
+    border-collapse: separate; }
