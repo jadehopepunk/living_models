@@ -8,7 +8,9 @@
     - if @project.photos.count > 1
       .thumbnails
         - @project.photos.each do |photo|
-          = image_tag photo.file.url(:preview)
+          .thumbnail_container
+            .thumbnail
+              = image_tag photo.file.url(:thumb)
 
   %h3
     = @project.name
