@@ -1,7 +1,6 @@
 #top_menu
   .tabs
-    = site_section_link :about, "About", '#'
-    = site_section_link :contact, "Contact", '#'
+    = site_section_link :about, "About", about_path
     
   .account_section
     - if logged_in?

@@ -8,5 +8,8 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
     admin.resources :users, :projects, :photos, :categories, :active_scaffold => true  
   end
+
+  map.resource :about, :controller => "about"
+
   map.root :controller => "projects"
 end
