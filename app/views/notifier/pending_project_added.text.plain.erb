@@ -1,0 +1,16 @@
+Hi Admin,
+
+A new story has been added to the Bank of Real Solutions, entitled:
+
+"<%= @project.name %>"
+
+It is not yet published on the site, and is awaiting your approval. You can see it here:
+
+  <%= project_url(@project) %>
+
+If you login with an admin account, you can edit it here:
+
+  <%= edit_admin_project_url(@project) %>
+
+When you are happy with the content, you can publish it by setting "Published" to "True" on the admin page above, and saving.
+
