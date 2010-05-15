@@ -37,6 +37,10 @@ class Project < ActiveRecord::Base
   def feature_photo
     photos.first
   end
+  
+  def can_be_edited_by?(current_user)
+    current_user && (current_user.is_admin? || current_user == owner)
+  end
 
   protected
 

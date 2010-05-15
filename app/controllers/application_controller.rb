@@ -7,5 +7,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   
   include UserControl
+  
+  protected
+  
+    def access_denied
+      flash[:warning] = "Access denied."
+      redirect_to root_path
+      false
+    end
 
 end
