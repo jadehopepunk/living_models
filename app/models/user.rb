@@ -25,6 +25,11 @@ class User < ActiveRecord::Base
     !crypted_password.blank?
   end
   
+  def activate!
+    self.activated = true
+    save!
+  end  
+  
   protected
   
     def activate_if_admin
