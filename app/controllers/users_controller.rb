@@ -27,11 +27,11 @@ class UsersController < ApplicationController
   end
   
   def edit_password
-    @user = current_user
+    @user = current_user || User.find_using_perishable_token(params[:id], 1.week)
   end
   
   def update_password
-    @user = current_user
+    @user = current_user || User.find_using_perishable_token(params[:id], 1.week)
     @user.password = params[:user]['password']
     @user.password_confirmation = params[:user]['password_confirmation']
     
