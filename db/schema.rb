@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100515011051) do
+ActiveRecord::Schema.define(:version => 20100515045007) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(:version => 20100515011051) do
     t.string   "current_login_ip"
     t.boolean  "is_admin",          :default => false
     t.string   "perishable_token"
-    t.boolean  "activated",         :default => true
+    t.boolean  "activated",         :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

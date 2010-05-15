@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
     
   attr_protected :is_admin
   after_create :send_notification_email
+  before_validation_on_create :activate_if_admin
   
   def name
     email.split('@').first.titleize
@@ -23,6 +24,12 @@ class User < ActiveRecord::Base
   def has_password?
     !crypted_password.blank?
   end
+  
+  protected
+  
+    def activate_if_admin
+      self.activated = true if is_admin
+    end
 
 end
 

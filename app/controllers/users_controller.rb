@@ -11,7 +11,7 @@ class UsersController < ApplicationController
         activated = @user.activate!
       end
       if @user.has_password?
-        if activated
+        if @user.activated
           @user.deliver_activation_confirmation!
           UserSession.create(@user, true)
           flash_message(:notice, "Thanks, your account has been activated and you are now signed in.")
