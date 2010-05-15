@@ -8,6 +8,7 @@ class Project < ActiveRecord::Base
   
   has_many :photos
   belongs_to :category
+  belongs_to :owner, :class_name => "User"
   
   named_scope :published, :conditions => {:published => true}
   
@@ -30,6 +31,7 @@ class Project < ActiveRecord::Base
   
   delegate :name, :to => :category, :prefix => :category, :allow_nil => true
   
+  before_validation_on_create :setup_owner
   after_create :notify_admin_of_pending_project
   
   def feature_photo
@@ -42,6 +44,10 @@ class Project < ActiveRecord::Base
       unless published
         Notifier.deliver_pending_project_added(self)
       end
+    end
+    
+    def setup_owner
+      self.owner = User.find_or_create_by_email(contact_email_address)
     end
 end
 

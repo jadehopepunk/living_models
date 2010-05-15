@@ -3,9 +3,14 @@ class User < ActiveRecord::Base
   acts_as_authentic
   
   attr_protected :is_admin
+  after_create :send_notification_email
   
   def name
     email.split('@').first.titleize
+  end
+  
+  def send_notification_email
+    Notifier.deliver_new_user_created(self)
   end
 end
 

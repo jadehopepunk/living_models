@@ -1,18 +1,33 @@
 require 'spec_helper'
 
 describe Project do
-  before(:each) do
-    @valid_attributes = {
-      
-    }
-  end
+  describe "when creating" do
+    before :each do
+      @project = Project.make_unsaved
+    end
 
-  it "should create a new instance given valid attributes" do
-    Project.create!(@valid_attributes)
+    describe "if user already exists for that email address" do
+      before :each do
+        @user = User.make(:email => 'bilbo@baggins.com')
+      end
+
+      it "should set that user as the owner" do
+        @project.contact_email_address = 'bilbo@baggins.com'
+        @project.save
+        @project.owner.should == @user
+      end
+    end
+
+    describe "if user doesnt exist for that email address" do
+      it "should create the owner" do
+        @project.contact_email_address = 'bilbo@baggins.com'
+        @project.save
+        @project.owner.should be_a(User)
+        @project.owner.email == 'bilbo@baggins.com'
+      end
+    end
   end
 end
-
-
 
 # == Schema Information
 #

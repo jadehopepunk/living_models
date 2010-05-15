@@ -15,8 +15,6 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
   # Specify gems that this application depends on and have them installed with rake gems:install
-  config.gem "rspec", :lib => false, :version => "1.2.9"
-  config.gem "rspec-rails", :lib => false, :version => "1.2.9"
   config.gem "haml", :lib => false, :version => "2.2.16"
   config.gem 'paperclip', :source => 'http://gemcutter.org', :version => "2.3.1.1"
   config.gem 'inherited_resources', :version => "1.0.1"
