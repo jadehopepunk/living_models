@@ -1,7 +1,13 @@
 
 class User < ActiveRecord::Base
-  acts_as_authentic
-  
+  acts_as_authentic do |config|
+    config.disable_perishable_token_maintenance true
+    config.merge_validates_length_of_password_field_options :allow_nil => true
+    config.merge_validates_confirmation_of_password_field_options :allow_nil => true
+    config.merge_validates_length_of_password_confirmation_field_options :allow_nil => true
+    config.ignore_blank_passwords true
+  end
+    
   attr_protected :is_admin
   after_create :send_notification_email
   
@@ -10,8 +16,14 @@ class User < ActiveRecord::Base
   end
   
   def send_notification_email
+    reset_perishable_token!
     Notifier.deliver_new_user_created(self)
   end
+
+  def has_password?
+    !crypted_password.blank?
+  end
+
 end
 
 

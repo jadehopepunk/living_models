@@ -1,17 +1,17 @@
 class Project < ActiveRecord::Base
   REGIONS = ["North Island", "South Island"]
-  
+
   acts_as_taggable_on :tags
 
   validates_presence_of :name, :location, :region, :category_id, :summary, :contact_email_address
   validates_length_of :name, :location, :website, :contact_email_address, :contact_name, :contact_phone, :maximum => 255, :allow_nil => true
-  
+
   has_many :photos
   belongs_to :category
   belongs_to :owner, :class_name => "User"
-  
+
   named_scope :published, :conditions => {:published => true}
-  
+
   named_scope :for_categories, lambda {|category_ids|
     if category_ids.empty?
       {}
@@ -19,7 +19,7 @@ class Project < ActiveRecord::Base
       {:conditions => "category_id IN (#{category_ids.map(&:to_i).join(',')})"}
     end
   }
-  
+
   named_scope :for_regions, lambda {|region_names|
     if region_names.empty?
       {}
@@ -28,29 +28,29 @@ class Project < ActiveRecord::Base
       {:conditions => "region IN (#{quoted_names.join(',')})"}
     end
   }
-  
+
   delegate :name, :to => :category, :prefix => :category, :allow_nil => true
-  
+
   before_validation_on_create :setup_owner
   after_create :notify_admin_of_pending_project
-  
+
   def feature_photo
     photos.first
   end
-  
+
   protected
-  
+
     def notify_admin_of_pending_project
       unless published
         Notifier.deliver_pending_project_added(self)
       end
     end
-    
+
     def setup_owner
       self.owner = User.find_or_create_by_email(contact_email_address)
+      raise Exception if !owner || owner.new_record?
     end
 end
-
 
 
 # == Schema Information

@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :projects, :has_many => :photos
   map.resources :photos, :user_sessions
-  map.resources :users, :member => {:activate => :get}
+  map.resources :users, :member => {:activate => :get, :edit_password => :get, :update_password => :put}
   
   map.namespace :admin do |admin|
     admin.resources :users, :projects, :photos, :categories, :active_scaffold => true  
