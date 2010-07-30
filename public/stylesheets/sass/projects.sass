@@ -68,33 +68,45 @@
       overflow: hidden
       border-collapse: separate
       
-  .thumbnails
-    +clearfix
-    margin-left: 10px
-    margin-bottom: 1em
-    
-    .thumbnail_container
-      display: block
-      width: 120px
-      height: 90px
-      background-image: url(../images/photo_frame_thumb.png)
-      background-repeat: no-repeat
-      border-collapse: separate
-      padding-top: 1px
-      float: left
+.thumbnails
+  +clearfix
+  margin-left: 10px
+  margin-bottom: 1em
+  
+  .thumbnail_container
+    display: block
+    width: 120px
+    height: 90px
+    background-image: url(../images/photo_frame_thumb.png)
+    background-repeat: no-repeat
+    border-collapse: separate
+    padding-top: 1px
+    float: left
 
-      .thumbnail
-        margin: 5px 0 0 5px
-        width: 108px
-        height: 75px
-        overflow: hidden
-        border-collapse: separate      
+    .thumbnail
+      margin: 5px 0 0 5px
+      width: 108px
+      height: 75px
+      overflow: hidden
+      border-collapse: separate      
 
-        img
-          opacity: 0.6
+      img
+        opacity: 0.6
+      
+      img.selected
+        opacity: 1.0
         
-        img.selected
-          opacity: 1.0
+.input
+  .thumbnail_container
+    width: 100%
+    float: none
+    
+    .thumbnail
+      float: left
+      margin-right: 15px
+    
+    .thumbnail-actions
+      padding-top: 10px
 
   
 .project_details

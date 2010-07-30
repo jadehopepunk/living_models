@@ -1,0 +1,8 @@
+.thumbnails
+  - @project.photos.each do |photo|
+    .thumbnail_container{:id => dom_id(photo)}
+      .thumbnail
+        = image_tag photo.file.url(:thumb), :class => (photo == @project.photos.first ? 'selected' : nil)
+      - if edit
+        .thumbnail_actions
+          = link_to_remote "Delete", :url => project_photo_path(@project, photo, :format => 'js'), :method => :delete
