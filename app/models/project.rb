@@ -41,6 +41,10 @@ class Project < ActiveRecord::Base
   def can_be_edited_by?(current_user)
     current_user && (current_user.is_admin? || current_user == owner)
   end
+  
+  def new_file=(value)
+    photos << Photo.new(:file => value) if value
+  end
 
   protected
 

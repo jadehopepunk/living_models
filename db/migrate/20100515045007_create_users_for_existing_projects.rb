@@ -5,7 +5,7 @@ class CreateUsersForExistingProjects < ActiveRecord::Migration
     Project.all.each do |project|
       unless project.owner
         project.owner = User.find_or_create_by_email(project.contact_email_address.strip)
-        project.save!
+        project.save(false)
       end
     end
   end

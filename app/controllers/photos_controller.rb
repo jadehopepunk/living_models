@@ -1,7 +1,9 @@
 class PhotosController < InheritedResources::Base
   belongs_to :project
-  before_filter :require_admin, :except => [:new, :create, :index, :show]
-  before_filter :require_owner, :only => [:edit, :update, :new, :create]
+  before_filter :require_admin, :except => [:new, :create, :index, :show, :destroy]
+  before_filter :require_owner, :only => [:edit, :update, :new, :create, :destroy]
+  
+  respond_to :js, :only => :destroy
 
   protected
 
