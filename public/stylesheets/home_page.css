@@ -24,6 +24,9 @@
         height: 110px;
         float: left;
         margin-right: 30px; }
+        #search .contents .inner_contents .search_section .feature_image {
+          margin: 15px auto 0 auto;
+          display: block; }
         #search .contents .inner_contents .search_section .section_title {
           margin: 0 10px;
           text-align: center;
