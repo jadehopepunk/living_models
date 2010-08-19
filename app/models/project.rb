@@ -52,6 +52,7 @@ class Project < ActiveRecord::Base
       unless published
         Notifier.deliver_pending_project_added(self)
       end
+    rescue => e
     end
 
     def setup_owner
