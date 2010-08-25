@@ -4,10 +4,6 @@
 var Filters = Class.create({
   selected_regions: [],
   
-  initialize: function(container_id) {
-    this.container_id = container_id;
-  },
-  
   toggleCategory: function(link) {
     this.toggleFilterLink(link);
   },
@@ -92,6 +88,7 @@ var Filters = Class.create({
     $('project_notices').update('');
   }
 });
+var filters = new Filters();
 
 var ImageBrowser = Class.create({
   initialize: function(container_id) {
@@ -119,3 +116,11 @@ var ImageBrowser = Class.create({
   }
 });
 
+Event.addBehavior({
+  'a.toggle_category:click' : function(e) {
+    filters.toggleCategory(e.findElement('a'));
+  },
+  'a.toggle_tag:click' : function(e) {
+    filters.toggleTag(e.findElement('a'));
+  }
+});

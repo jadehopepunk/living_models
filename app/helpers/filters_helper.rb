@@ -10,12 +10,12 @@ module FiltersHelper
   end
   
   def category_filters_script
-    javascript_tag "var filters = new Filters();"
+    # javascript_tag "var filters = new Filters();"
   end
   
   def category_icon_link(category)
     if category.has_data?
-      link_to_function category_icon(category), "filters.toggleCategory(this)", :id => dom_id(category)
+      link_to_function category_icon(category), "", :id => dom_id(category), :class => 'toggle_category'
     else
       no_data_category_icon(category)
     end
@@ -51,7 +51,7 @@ module FiltersHelper
   def tag_filters
     tags = Project.top_tags(30).sort_by(&:name)
     tag_cloud(tags, %w(tag1 tag2 tag3)) do |tag, css_class|
-      link_to_function tag.name, 'filters.toggleTag(this)', :class => css_class
+      link_to_function tag.name, '', :class => css_class + ' toggle_tag'
     end.join(' ')
   end
   
