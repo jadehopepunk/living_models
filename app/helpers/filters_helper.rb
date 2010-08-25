@@ -6,11 +6,10 @@ module FiltersHelper
   end
   
   def filters_javascript
-    [category_filters_script].join("\n")
+    # [category_filters_script].join("\n")
   end
   
   def category_filters_script
-    # javascript_tag "var filters = new Filters();"
   end
   
   def category_icon_link(category)
