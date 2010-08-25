@@ -43,7 +43,9 @@
           #search .contents .inner_contents .search_section .categories a.active img {
             border: 2px solid orange; }
         #search .contents .inner_contents .search_section .no_data {
-          opacity: 0.3; }
+          opacity: 0.3;
+          filter: alpha(opacity = 30);
+          zoom: 1; }
       #search .contents .inner_contents .last {
         margin-right: 0; }
 
