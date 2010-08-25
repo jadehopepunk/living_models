@@ -10,7 +10,7 @@ module FiltersHelper
   end
   
   def category_filters_script
-    javascript_tag "var filters = new Filters()"
+    javascript_tag "var filters = new Filters();"
   end
   
   def category_icon_link(category)

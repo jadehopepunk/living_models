@@ -14,7 +14,7 @@ var Filters = Class.create({
   
   toggleRegion: function(name) {
     if (this.selected_regions.include(name)) {
-      this.selected_regions = this.selected_regions.without(name)
+      this.selected_regions = this.selected_regions.without(name);
     } else {
       this.selected_regions.push(name);
     }
@@ -37,20 +37,20 @@ var Filters = Class.create({
     if (this.selected_regions.length > 0) {
       name = this.selected_regions.sort().map(function(region_name) {return region_name.gsub(' ', '').underscore();}).join('_');
     }
-    var full_name = '/images/maps/nz/' + name + '.png'
+    var full_name = '/images/maps/nz/' + name + '.png';
     $('region_map_image').src = full_name;
   },
   
   loadDataForFilters: function() {
     this.displayLoadingData();
-    new Ajax.Request("/projects.js", {
+    var request = new Ajax.Request("/projects.js", {
       method: 'get',
       parameters: this.currentFilterParameters(),
       onSuccess: function(transport) {
         this.clearNotice();
       }.bind(this),
       onFailure: function(transport) {
-        this.setNotice('error', "Failure")
+        this.setNotice('error', "Failure");
       }.bind(this)
     }
     );
@@ -85,7 +85,7 @@ var Filters = Class.create({
   },
   
   setNotice: function(type, message) {
-    $('project_notices').update("<div class=\"message " + type + "\">" + message + "</div>")
+    $('project_notices').update("<div class=\"message " + type + "\">" + message + "</div>");
   },
   
   clearNotice: function() {
@@ -97,7 +97,7 @@ var ImageBrowser = Class.create({
   initialize: function(container_id) {
     this.container = $(container_id);
     this.container.select(".thumbnail img").each(function(thumb) {
-      thumb.observe('click', this.onThumbClicked.curry(thumb).bind(this))
+      thumb.observe('click', this.onThumbClicked.curry(thumb).bind(this));
     }.bind(this));
   },
   
@@ -118,3 +118,4 @@ var ImageBrowser = Class.create({
     this.container.select(".main_photo img")[0].src = url;
   }
 });
+
