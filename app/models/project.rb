@@ -58,7 +58,6 @@ class Project < ActiveRecord::Base
 
     def setup_owner
       self.owner = User.find_or_create_by_email(contact_email_address)
-      raise Exception if !owner || owner.new_record?
     end
 end
 
