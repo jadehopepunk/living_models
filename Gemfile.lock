@@ -20,6 +20,7 @@ GEM
     inherited_resources (1.0.0)
       has_scope (>= 0.3)
       responders (>= 0.2)
+    mysql (2.8.1)
     paperclip (2.3.1.1)
     rack (1.0.1)
     rails (2.3.5)
@@ -41,6 +42,7 @@ DEPENDENCIES
   haml (= 2.2.16)
   hoptoad_notifier (= 2.3.5)
   inherited_resources (= 1.0.0)
+  mysql
   paperclip (= 2.3.1.1)
   rails (= 2.3.5)
   responders (= 0.4.0)
