@@ -6,7 +6,7 @@ require 'capistrano/ext/multistage'
 set :application, "living_models"
 set :repository,  "git@github.com:craigambrose/living_models.git"
 set :scm, "git"
-set :git_enable_submodules, 1
+# set :git_enable_submodules, 1
 set :branch, "master" unless exists?(:branch)
 
 namespace :deploy do
