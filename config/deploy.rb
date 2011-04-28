@@ -23,6 +23,7 @@ end
 
 after "deploy:update_code" do
   link_from_shared_to_current('config')
+  run "cd #{release_path} && bundle install --development --without test"
 end
 after "deploy", "deploy:cleanup"
 after "deploy:migrations", "deploy:cleanup"
