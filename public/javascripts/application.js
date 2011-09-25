@@ -8,6 +8,7 @@ var Filters = Class.create({
     this.toggleFilterLink(link);
   },
   
+<<<<<<< HEAD
   toggleRegion: function(name) {
     if (this.selected_regions.include(name)) {
       this.selected_regions = this.selected_regions.without(name);
@@ -17,6 +18,47 @@ var Filters = Class.create({
     this.updateRegionMap();
     this.loadDataForFilters();
   },
+=======
+// STEF JONGKIND 16 September 2011
+
+//  toggleRegion: function(name) {
+//    if (this.selected_regions.include(name)) {
+//      this.selected_regions = this.selected_regions.without(name);
+//    } else {
+//      this.selected_regions.push(name);
+//    }
+//    this.updateRegionMap();
+//    this.loadDataForFilters();
+//  },
+  
+  toggleRegion: function(name, id) {
+    this.selected_regions = [];
+    this.selected_region_ids = [];
+    this.selected_regions.push(name);
+    this.selected_region_ids.push(id);
+    this.updateRegionMap();
+    this.loadDataForFilters();
+  },
+
+//  updateRegionMap: function() {
+//    var name = 'none';
+//    if (this.selected_regions.length > 0) {
+//      name = this.selected_regions.sort().map(function(region_name) {return region_name.gsub(' ', '').underscore();}).join('_');
+//    }
+//    var full_name = '/images/maps/nz/' + name + '.png';
+//    $('region_map_image').src = full_name;
+//  },
+
+  updateRegionMap: function() {
+    var name = 'region_map';
+    if (this.selected_regions.length > 0) {
+      name = this.selected_regions.sort().map(function(region_name) {return region_name.gsub(' ', '');});
+    }
+    var full_name = '/images/maps/nz/' + name + '.png';
+    $('region_map_image').src = full_name;
+  },
+// END 16 September 2011
+>>>>>>> d61dc80ac36216a57897abf23172e14d28d0a2f8
   
   toggleTag: function(link) {
     this.toggleFilterLink(link);
@@ -28,6 +70,7 @@ var Filters = Class.create({
     this.loadDataForFilters();    
   },
   
+<<<<<<< HEAD
   updateRegionMap: function() {
     var name = 'none';
     if (this.selected_regions.length > 0) {
@@ -37,6 +80,9 @@ var Filters = Class.create({
     $('region_map_image').src = full_name;
   },
   
+=======
+
+>>>>>>> d61dc80ac36216a57897abf23172e14d28d0a2f8
   loadDataForFilters: function() {
     this.displayLoadingData();
     var request = new Ajax.Request("/projects.js", {
@@ -55,7 +101,14 @@ var Filters = Class.create({
   currentFilterParameters: function() {
     return {
       'category_ids': this.activeCategoryIds().join(','),
+<<<<<<< HEAD
       'region_names': this.activeRegionNames().join(','),
+=======
+// STEF JONGKIND 16 September 2011
+//	  'region_names': this.activeRegionNames().join(','),
+      'region_ids': this.activeRegionIds(),
+// END 16 September 2011
+>>>>>>> d61dc80ac36216a57897abf23172e14d28d0a2f8
       'tags': this.activeTags().join(',')
     };
   },
@@ -70,6 +123,20 @@ var Filters = Class.create({
     return this.selected_regions;
   },
   
+<<<<<<< HEAD
+=======
+// STEF JONGKIND 16 September 2011
+  activeRegionIds: function() {
+    return this.selected_region_ids;
+  },
+//	activeRegionIds: function() {
+//	  return $$('#regions a.active').map(function(element) {
+//	    return element.id.split('_').last();
+//	  });
+//	},
+// END 16 September 2011
+  
+>>>>>>> d61dc80ac36216a57897abf23172e14d28d0a2f8
   activeTags: function() {
     return $$('#tags a.active').map(function(element) {
       return element.innerHTML;

@@ -13,7 +13,7 @@
   = f.textile_editor :outcomes, :simple => true, :help => "What has the project achieved, how has it helped making a community more resilient?", :class => 'long'
   = f.textile_editor :future_plans, :simple => true, :help => "Any new things on the horizon for the project.", :class => 'long'
   = f.text_field :location, :required => true, :help => "Use a valid new zealand street address if possible."
-  = f.select :region_id, Region.all.map {|region| [region.name, region.id]}, :required => true, :include_blank => true
+  = f.select :region, Project::REGIONS, :required => true, :include_blank => true
   = f.select :category_id, Category.all.map {|category| [category.name, category.id]}, :required => true, :include_blank => true
   = f.text_field :tag_list, :help => "Separate tags with commas"
   = f.text_field :contact_name

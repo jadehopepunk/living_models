@@ -1,0 +1,3 @@
+module Admin::RegionsHelper
+  
+end

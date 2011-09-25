@@ -1,6 +1,4 @@
 class Project < ActiveRecord::Base
-  REGIONS = ["North Island", "South Island"]
-
   acts_as_taggable_on :tags
 
   validates_presence_of :name, :location, :region, :category_id, :summary, :contact_email_address
@@ -8,6 +6,7 @@ class Project < ActiveRecord::Base
 
   has_many :photos
   belongs_to :category
+  belongs_to :region
   belongs_to :owner, :class_name => "User"
 
   named_scope :published, :conditions => {:published => true}
@@ -20,12 +19,11 @@ class Project < ActiveRecord::Base
     end
   }
 
-  named_scope :for_regions, lambda {|region_names|
-    if region_names.empty?
+  named_scope :for_regions, lambda {|region_ids|
+    if region_ids.blank?
       {}
     else
-      quoted_names = region_names.map {|name| ActiveRecord::Base.connection.quote(name)}
-      {:conditions => "region IN (#{quoted_names.join(',')})"}
+      {:conditions => "region_id IN (#{region_ids.map(&:to_i).join(',')})"}
     end
   }
 

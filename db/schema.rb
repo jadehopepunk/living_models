@@ -9,7 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20100515045007) do
+=======
+ActiveRecord::Schema.define(:version => 20110923233523) do
+>>>>>>> d61dc80ac36216a57897abf23172e14d28d0a2f8
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -46,10 +50,23 @@ ActiveRecord::Schema.define(:version => 20100515045007) do
     t.integer  "category_id"
     t.string   "region"
     t.integer  "owner_id"
+<<<<<<< HEAD
+=======
+    t.integer  "region_id"
+>>>>>>> d61dc80ac36216a57897abf23172e14d28d0a2f8
   end
 
   add_index "projects", ["category_id"], :name => "index_projects_on_category_id"
 
+<<<<<<< HEAD
+=======
+  create_table "regions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+>>>>>>> d61dc80ac36216a57897abf23172e14d28d0a2f8
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -70,10 +87,17 @@ ActiveRecord::Schema.define(:version => 20100515045007) do
   create_table "users", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+<<<<<<< HEAD
     t.string   "email"
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
+=======
+    t.string   "email",             :default => ""
+    t.string   "crypted_password",  :default => ""
+    t.string   "password_salt",     :default => ""
+    t.string   "persistence_token", :default => ""
+>>>>>>> d61dc80ac36216a57897abf23172e14d28d0a2f8
     t.integer  "login_count",       :default => 0
     t.datetime "last_request_at"
     t.datetime "last_login_at"
