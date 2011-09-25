@@ -1,0 +1,129 @@
+@import mixins.sass
+
+.project_list
+  .project
+    overflow: hidden
+    background-image: url(../images/projects/preview_background.gif)
+    margin-bottom: 10px
+
+    img.project_photo
+      float: left
+      margin-right: 10px
+      
+    .details
+      margin-left: 210px
+    
+    .summary
+      font-size: 10pt
+      
+#project_notices
+  .message
+    margin-bottom: 1em
+    text-align: center
+
+  .notice
+    color: #003300
+    background-color: #99cc66
+    border: 1px solid #339900
+
+  .warning, .error
+    color: #660000
+    background-color: #ff6666
+    border: 1px solid #993333
+
+.tag_cloud
+  a
+    font-size: 10pt
+    font-weight: normal
+
+  .tag1
+    font-size: 90%
+
+  .tag2
+    font-size: 120%
+
+  .tag3
+    font-size: 160%
+
+  a.active
+    background-color: orange
+    color: white
+
+#all_photos_container
+  float: left
+
+  .main_photo_container
+    display: block
+    width: 659px
+    height: 458px
+    background-image: url(../images/photo_frame.jpg)
+    background-repeat: no-repeat
+    border-collapse: separate
+    padding-top: 1px
+  
+    .main_photo
+      margin: 20px 0 0 20px
+      width: 585px
+      height: 390px
+      overflow: hidden
+      border-collapse: separate
+      
+.thumbnails
+  +clearfix
+  margin-left: 10px
+  margin-bottom: 1em
+  
+  .thumbnail_container
+    display: block
+    width: 120px
+    height: 90px
+    background-image: url(../images/photo_frame_thumb.png)
+    background-repeat: no-repeat
+    border-collapse: separate
+    padding-top: 1px
+    float: left
+
+    .thumbnail
+      margin: 5px 0 0 5px
+      width: 108px
+      height: 75px
+      overflow: hidden
+      border-collapse: separate      
+
+      img
+        opacity: 0.6
+      
+      img.selected
+        opacity: 1.0
+        
+.input
+  .thumbnail_container
+    width: 100%
+    float: none
+    
+    .thumbnail
+      float: left
+      margin-right: 15px
+    
+    .thumbnail-actions
+      padding-top: 10px
+
+  
+.project_details
+  h4
+    margin-bottom: 0
+
+  h3
+    padding-top: 10px
+    text-align: center
+    font-size: 22pt
+    font-weight: normal
+    line-height: 100%
+
+  .contact
+    .website
+      margin-top: 1em
+        
+  .descriptions
+    clear: left
+    font-size: 12pt

@@ -1,0 +1,19 @@
+!!!strict
+%html
+  %head
+    %title Kiwis Can Do
+    = stylesheet_link_tag :all
+    = javascript_include_tag 'prototype.js', 'lowpro.js', 'livevalidation.js', 'textile-editor.js', 'textile-editor-config.js', 'application.js'
+  %body
+    #page_body
+      #header
+        = render :partial => 'layouts/header'
+        %a#hero{:href => '/', :alt => "Bank of real solutions", :title => "Bank of real solutions"}
+          %h1 Bank of real solutions
+      = flash_div      
+      #contents{:class => "#{controller_name}_#{action_name}" }
+        .main_contents
+          .main_inner_contents
+            = yield
+      #footer
+        &nbsp;

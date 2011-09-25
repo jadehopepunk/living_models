@@ -1,0 +1,6 @@
+tmp/*
+log/*
+config/database.yml
+.DS_Store
+mkmf.log
+public/system/*

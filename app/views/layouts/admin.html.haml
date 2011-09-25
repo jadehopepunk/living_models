@@ -1,0 +1,18 @@
+!!!strict
+%html
+  %head
+    %title Kiwis Can Do (Administration)
+    = stylesheet_link_tag :all
+    = javascript_include_tag 'prototype.js', 'lowpro.js', 'livevalidation.js', 'textile-editor.js', 'textile-editor-config.js', 'application.js'
+    = active_scaffold_includes
+  %body.admin
+    #page_body
+      #header
+        = render :partial => 'layouts/header'
+      #admin_header
+        = link_to "Users", admin_users_path
+        = link_to "Projects", admin_projects_path
+        = link_to "Categories", admin_categories_path, :class => "last"
+      = flash_div      
+      #admin_contents
+        = yield

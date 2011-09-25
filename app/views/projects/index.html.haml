@@ -1,0 +1,42 @@
+= filters_javascript
+#home_page
+  #search
+    .contents
+      .inner_contents
+        .search_section
+          %h3.section_title Choose Categories
+          #categories.search_body.categories
+            = category_filters
+        
+        .search_section
+          / = link_to image_tag('layout/a-wealth.jpg', :class => 'feature_image'), new_project_path
+          %h3.section_title Choose NZ Region
+          #regions.search_body.region_selector
+            = region_filters
+            
+        .search_section.last
+          %h3.section_title Choose Keywords
+          #tags.search_body.tag_cloud
+            = tag_filters
+
+  #body_with_navigation
+    #navigation
+      .contents
+        .inner_contents
+          %p
+            %strong Kiwis aren't just talking
+            about a better world, we're building it. This website lists
+            projects all around New Zealand / Aotearoa that are already building resilience in local
+            communities.
+            
+          %p
+            Do you know of a local success story that you would like to showcase here? 
+            = link_to "Click here to add your project.", new_project_path
+
+
+    #body
+      .contents
+        .inner_contents
+          %h3.section_title Latest Success Stories
+          #project_notices
+          = render :partial => 'list'

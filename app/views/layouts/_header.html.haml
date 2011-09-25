@@ -1,0 +1,12 @@
+#top_menu
+  .tabs
+    = site_section_link :about, "About", about_path
+    
+  .account_section
+    - if logged_in?
+      = "Welcome #{current_user.name},"
+      = link_to "logout", logout_path, :method => :delete
+      - if current_user.is_admin?
+        = '(' + link_to("admin", admin_users_path) + ')'
+    - else
+      = link_to "login", login_path

@@ -1,0 +1,174 @@
+@import mixins.sass
+
+!fixed_width= 998px
+ 
+!anchor_light= #FF6633
+!anchor_dark= #CC3300
+ 
+!heading= #333399
+ 
+!error_text= #DD3C10
+!error_background= #fff9d7 
+!error_border= #e2c822
+
+body
+  :margin 0
+  :padding 0
+  :color #333
+  :background-color #EEE
+  :line-height 120%
+  :font-size 11pt
+ 
+a:link, a:visited
+  :color= !anchor_dark
+  :text-decoration none
+  :font-weight bold
+  
+  img
+    border: 0
+
+img
+  border: 0
+  
+a:hover
+  :color= !anchor_light
+  :text-decoration underline
+
+  img
+    border: 0
+  
+pre
+  :width 100%
+  :padding-bottom 24px
+ 
+h1
+  :font-size 16pt
+  :font-weight bold
+ 
+h2
+  :font-size 13pt
+  :font-weight bold
+  :color= !heading
+ 
+h3
+  :font-size 13pt
+  :font-weight bold
+  :color= !heading
+  
+#page_body
+  :width= !fixed_width
+  :margin 10px auto
+  :background-color #E9E9E9
+  :border 1px solid #BCBCBC
+ 
+#top_menu
+  :background-image url('../images/layout/top_menu_background.gif')
+  :background-repeat repeat-x
+  :width 100%
+  :height 43px
+  :top 0px
+  
+  .tabs
+    float: left
+  
+    a.site_section
+      width: 120px
+      height: 43px
+      display: inline-block
+      background-repeat: no-repeat
+    
+      span
+        display: none
+      
+    a#about
+      background-image: url(../images/layout/top_menu_about.gif)    
+      &:hover
+        background-image: url(../images/layout/top_menu_about_over.gif)    
+  
+    a#contact
+      background-image: url(../images/layout/top_menu_contact.gif)
+      &:hover
+        background-image: url(../images/layout/top_menu_contact_over.gif)
+  
+  .account_section
+    float: right
+    margin: 10px 10px 0 0
+    font-size: 90%
+  
+#hero
+  background-image: url('../images/layout/Header.jpg')
+  background-repeat: no-repeat
+  height: 200px
+  display: block 
+  
+  h1
+    display: none
+  
+#contents
+  background-image: url(../images/layout/full_width_background.gif)
+  background-repeat: repeat-y
+  
+  .main_contents
+    background-image: url(../images/layout/full_width_header.gif)
+    background-repeat: no-repeat
+  
+    .main_inner_contents
+      background-image: url(../images/layout/full_width_footer.gif)
+      background-repeat: no-repeat
+      background-position: bottom left
+      padding: 20px 20px 25px 20px
+      overflow: hidden
+        
+#footer
+  height: 23px
+  background-repeat: no-repeat
+  padding: 30px 20px 20px 20px
+  font-size: 80%
+  
+.formError
+  :color= !error_text
+  :background-color= !error_background
+  :border-color= !error_border
+  :border-style solid
+  :border-width 2px
+  :margin 5px 0
+  :padding 3px 6px
+  
+form
+  +clearfix
+  
+.flashMessages
+  clear: both
+  color: #FFF
+
+  .flashMessage
+    margin-bottom: 1px
+
+    .wrap
+      padding: 6px 0 5px 0
+      text-align: center
+
+  .notice
+    color: #003300
+    background-color: #99cc66
+    border-bottom: 1px solid #339900
+
+  .warning, .error
+    color: #660000
+    background-color: #ff6666
+    border-bottom: 1px solid #993333
+
+.region_selector
+  width: 130px
+  margin: 0 auto
+  
+.actions
+  a
+    padding-right: 10px
+    border-right: 2px solid #333
+    margin-right: 10px  
+    
+  a:last-child
+    padding-right: 0
+    border-right: 0
+    margin-right: 0

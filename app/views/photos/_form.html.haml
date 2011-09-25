@@ -1,0 +1,4 @@
+- form_for [@project, @photo], :live_validations => true, :html => {:multipart => true} do |f|
+  = f.error_messages
+  = f.file_field :file
+  = f.submit_and_cancel_buttons "Create"

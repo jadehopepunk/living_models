@@ -1,0 +1,103 @@
+#contents.projects_index {
+  background-image: none; }
+  #contents.projects_index .main_contents {
+    background-image: none; }
+    #contents.projects_index .main_contents .main_inner_contents {
+      background-image: none;
+      padding: 0; }
+
+#search {
+  background-image: url(../images/layout/search_background.gif);
+  background-repeat: repeat-y; }
+  #search .contents {
+    background-image: url(../images/layout/search_header.gif);
+    background-repeat: no-repeat; }
+    #search .contents .inner_contents {
+      background-image: url(../images/layout/search_footer.gif);
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      height: 200px;
+      padding: 10px 0px 30px 10px;
+      overflow: hidden; }
+      #search .contents .inner_contents .search_section {
+        width: 305px;
+        height: 110px;
+        float: left;
+        margin-right: 30px; }
+        #search .contents .inner_contents .search_section .feature_image {
+          margin: 15px auto 0 auto;
+          display: block; }
+        #search .contents .inner_contents .search_section .section_title {
+          margin: 0 10px;
+          text-align: center;
+          font-size: 90%; }
+        #search .contents .inner_contents .search_section .search_body {
+          padding: 0 0 10px 10px; }
+        #search .contents .inner_contents .search_section .categories {
+          padding: 5px 0 10px 10px;
+          margin-right: -10px; }
+          #search .contents .inner_contents .search_section .categories img {
+            margin-right: 16px; }
+          #search .contents .inner_contents .search_section .categories a img {
+            border: 2px solid white; }
+          #search .contents .inner_contents .search_section .categories a.active img {
+            border: 2px solid orange; }
+        #search .contents .inner_contents .search_section .no_data {
+          opacity: 0.3;
+          filter: alpha(opacity = 30);
+          zoom: 1; }
+      #search .contents .inner_contents .last {
+        margin-right: 0; }
+
+#body_with_navigation {
+  overflow: hidden; }
+  #body_with_navigation p {
+    margin-top: 0; }
+  #body_with_navigation #navigation {
+    background-image: url(../images/layout/one_third_background.gif);
+    background-repeat: repeat-y;
+    width: 332px;
+    float: left; }
+    #body_with_navigation #navigation .contents {
+      background-image: url(../images/layout/one_third_header.gif);
+      background-repeat: no-repeat; }
+      #body_with_navigation #navigation .contents .inner_contents {
+        background-image: url(../images/layout/one_third_footer.gif);
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        padding: 20px 20px 20px 20px;
+        overflow: hidden; }
+        #body_with_navigation #navigation .contents .inner_contents .section_title {
+          margin: 0;
+          height: 27px; }
+  #body_with_navigation #body {
+    background-image: url(../images/layout/two_thirds_background.gif);
+    background-repeat: repeat-y;
+    width: 666px;
+    float: left; }
+    #body_with_navigation #body .contents {
+      background-image: url(../images/layout/two_thirds_header.gif);
+      background-repeat: no-repeat; }
+      #body_with_navigation #body .contents .inner_contents {
+        background-image: url(../images/layout/two_thirds_footer.gif);
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        padding: 10px 20px 20px 20px;
+        overflow: hidden; }
+        #body_with_navigation #body .contents .inner_contents .section_title {
+          margin: 0 0 10px 0;
+          height: 27px; }
+
+#results {
+  background-image: url(../images/layout/results_background.gif);
+  background-repeat: repeat-y; }
+  #results .contents {
+    background-image: url(../images/layout/results_header.gif);
+    background-repeat: no-repeat;
+    padding: 50px 30px 30px 360px; }
+
+.project_list .project {
+  border: 1px solid #E3E3E3;
+  padding: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px; }

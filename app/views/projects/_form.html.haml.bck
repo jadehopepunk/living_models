@@ -1,0 +1,24 @@
+- form_for @project, :live_validations => true, :html => {:multipart => true} do |f|
+  = f.error_messages
+  = f.text_field :name, :required => true, :help => "What is this project called?"
+  = f.textile_editor :summary, :simple => true, :required => true, :label => "Brief Summary", :help => "Describe your project in one paragraph."
+  = f.file_field :new_file, :label => "Add an Image", :help => "Image files will be automatically cropped and resized"
+  - if @project && !@project.photos.empty?
+    .file-field
+      %label Existing images
+      .input
+        = render :partial => 'photo_thumbnails', :locals => {:edit => true}
+      
+  = f.textile_editor :goals, :simple => true, :label => "Vision and Goals", :help => "What was the project trying to achieve since it started? What problem is it trying to solve?", :class => 'long'
+  = f.textile_editor :outcomes, :simple => true, :help => "What has the project achieved, how has it helped making a community more resilient?", :class => 'long'
+  = f.textile_editor :future_plans, :simple => true, :help => "Any new things on the horizon for the project.", :class => 'long'
+  = f.text_field :location, :required => true, :help => "Use a valid new zealand street address if possible."
+  = f.select :region, Project::REGIONS, :required => true, :include_blank => true
+  = f.select :category_id, Category.all.map {|category| [category.name, category.id]}, :required => true, :include_blank => true
+  = f.text_field :tag_list, :help => "Separate tags with commas"
+  = f.text_field :contact_name
+  = f.text_field :contact_email_address, :required => true
+  = f.text_field :contact_phone
+  = f.text_field :website, :help => "Website address for your project, if it has one"
+  = f.submit_and_cancel_buttons "Save"
+  = textile_editor_initialize

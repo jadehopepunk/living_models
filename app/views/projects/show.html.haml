@@ -1,0 +1,50 @@
+.project_details
+  #all_photos_container
+    .main_photo_container
+      .main_photo
+        - if @project.photos.first
+          = image_tag @project.photos.first.file.url(:main)
+    - if @project.photos.count > 1
+      = render :partial => 'photo_thumbnails', :locals => {:edit => false}              
+    = javascript_tag "var browser = new ImageBrowser('all_photos_container')"
+
+  %h3
+    = @project.name
+    %br
+    = image_tag 'scroll.png'
+
+  .contact
+    %h4 Contact:
+    .contact_name= @project.contact_name
+    .contact_phone= @project.contact_phone
+    .contact_email= @project.contact_email_address
+    - if @project.website
+      .website= link_to without_protocol(@project.website), with_protocol(@project.website)
+
+  .descriptions
+    .summary
+      %h4 Summary
+      = simple_format @project.summary
+
+    .goals
+      %h4 Goals
+      = simple_format @project.goals
+
+    .outcomes
+      %h4 Outcomes
+      = simple_format @project.outcomes
+
+    .future_plans
+      %h4 Future Plans
+      = simple_format @project.future_plans
+
+  
+  / - project_display_fields.each do |key|
+  /   - unless %w(contact_name contact_phone contact_email_address website).include?(key.to_s)
+  /     = project_field key
+
+  .actions
+    - if @project.can_be_edited_by?(current_user)
+      = link_to('Edit', edit_project_path(@project))
+      = link_to('Add Photo', new_project_photo_path(@project))
+    = link_to('Back to index', projects_path)

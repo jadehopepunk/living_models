@@ -1,0 +1,12 @@
+#project_list
+  .project_list
+    - @projects.each do |project|
+      .project
+        .photo_preview_container
+          - if project.feature_photo
+            = image_tag project.feature_photo.file.url(:preview), :alt => project.name, :class => "project_photo"
+        .details
+          = link_to project.name || 'Unnamed project', project_path(project)
+          .summary= truncate(project.summary, :length => 190)
+      
+  = will_paginate @projects
