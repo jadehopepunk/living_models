@@ -20,7 +20,7 @@ var Filters = Class.create({
   updateRegionMap: function() {
     var name = 'region_map';
     if (this.selected_regions.length > 0) {
-      name = this.selected_regions.sort().map(function(region_name) {return region_name.gsub(' ', '');});
+      name = this.selected_regions.sort().map(function(region_name) {return region_name.gsub(' ', '').toLowerCase();});
     }
     var full_name = '/images/maps/nz/' + name + '.png';
     $('region_map_image').src = full_name;

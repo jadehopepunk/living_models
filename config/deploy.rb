@@ -2,6 +2,7 @@ set :stages, %w(production)
 set :default_stage, "production"
 
 require 'capistrano/ext/multistage'
+require "bundler/capistrano"
 
 set :application, "living_models"
 set :repository,  "git@github.com:craigambrose/living_models.git"
@@ -23,7 +24,6 @@ end
 
 after "deploy:update_code" do
   link_from_shared_to_current('config')
-  run "cd #{release_path} && bundle install --deployment --without test"
 end
 after "deploy", "deploy:cleanup"
 after "deploy:migrations", "deploy:cleanup"

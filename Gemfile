@@ -10,3 +10,8 @@ gem 'responders', '0.4.0'
 gem 'authlogic', "2.1.3"
 gem 'will_paginate', '2.3.11'
 gem 'hoptoad_notifier', '2.3.5'
+
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-ext'
+end
