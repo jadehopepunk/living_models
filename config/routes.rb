@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :member => {:activate => :get, :edit_password => :get, :update_password => :put}
   
   map.namespace :admin do |admin|
-    admin.resources :users, :projects, :photos, :categories, :active_scaffold => true  
+    admin.resources :users, :projects, :photos, :categories, :regions, :active_scaffold => true  
   end
 
   map.resource :about, :controller => "about"

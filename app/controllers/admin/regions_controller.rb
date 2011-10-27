@@ -1,7 +1,8 @@
-# STEF JONGKIND 16 September 2011
-class Admin::RegionsController < ApplicationController
-  active_scaffold :region do |config|  
-    config.list.columns = config.create.columns = config.update.columns = [:name]  
-  end  
-  
+module Admin
+  class RegionsController < AdminController
+    active_scaffold :region do |config|  
+  #    config.list.columns = config.create.columns = config.update.columns = [:name]  
+      config.columns = [:name]      
+    end  
+  end
 end

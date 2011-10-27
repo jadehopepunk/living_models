@@ -12,7 +12,8 @@
       #admin_header
         = link_to "Users", admin_users_path
         = link_to "Projects", admin_projects_path
-        = link_to "Categories", admin_categories_path, :class => "last"
+        = link_to "Categories", admin_categories_path
+        = link_to "Regions", admin_regions_path, :class => "last"
       = flash_div      
       #admin_contents
         = yield

@@ -76,7 +76,8 @@ class TagList < Array
     def from(string)
       string = string.join(", ") if string.respond_to?(:join)
 
-      returning new do |tag_list|
+      #returning new do |tag_list|
+      new.tap do |tag_list|
         string = string.to_s.dup
         
         # Parse the quoted tags

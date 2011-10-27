@@ -3,19 +3,51 @@
 
 var Filters = Class.create({
   selected_regions: [],
+  selected_old_tags: [],
+  selected_old_category_id: [],
+  selected_tags: [],
+  selected_region_ids: [],
+  selected_category_ids: [],
   
-  toggleCategory: function(link) {
-    this.toggleFilterLink(link);
-  },
+//  Stef Jongkind 24 Oct 2011 please, leave comment for future revert
+//  toggleCategory: function(link) {
+//    this.toggleFilterLink(link);
+//  },
+
+  toggleCategory: function(link, id) {
+	this.resetSelections();
+    this.selected_old_category_id.push(id);
+    this.selected_category_ids.push(link);
+    this.loadDataForFilters();
+	$(id).addClassName('active');
+},
+
+
+ resetSelections: function() {
+	this.selected_tags = [];
+	this.selected_regions = [];
+	this.selected_region_ids = [];
+	this.selected_category_ids = [];
+	if (this.selected_old_category_id.length > 0) {
+		$(this.selected_old_category_id[0]).removeClassName('active');
+	}	
+	if (this.selected_old_tags.length > 0) {
+		$(this.selected_old_tags[0]).removeClassName('active');
+	}	
+    this.selected_old_category_id = [];
+    this.selected_old_tags = [];
+	this.updateRegionMap();
+ },
+
 
   toggleRegion: function(name, id) {
-    this.selected_regions = [];
-    this.selected_region_ids = [];
+	this.resetSelections();
     this.selected_regions.push(name);
     this.selected_region_ids.push(id);
     this.updateRegionMap();
     this.loadDataForFilters();
   },
+
 
   updateRegionMap: function() {
     var name = 'region_map';
@@ -26,8 +58,22 @@ var Filters = Class.create({
     $('region_map_image').src = full_name;
   },
   
-  toggleTag: function(link) {
-    this.toggleFilterLink(link);
+//  toggleTag: function(link) {
+//    //this.toggleFilterLink(link);
+//	this.resetSelections();
+//    this.selected_tags.push(link);
+//    this.loadDataForFilters();    
+//    link.addClassName('active');
+//    this.selected_old_tags.push(link);
+//  },
+  
+  toggleTag: function(link, id) {
+    //this.toggleFilterLink(link);
+	this.resetSelections();
+    this.selected_old_tags.push(id);
+    this.selected_tags.push(link);
+    this.loadDataForFilters();    
+	$(id).addClassName('active');
   },
   
   toggleFilterLink: function(link) {
@@ -50,19 +96,26 @@ var Filters = Class.create({
     }
     );
   },
-  
+
+//  Stef Jongkind 24 Oct 2011 please, leave comment for future revert
   currentFilterParameters: function() {
     return {
-      'category_ids': this.activeCategoryIds().join(','),
+//	  'category_ids': this.activeCategoryIds().join(','),
+  	  'category_ids': this.activeCategoryIds(),
       'region_ids': this.activeRegionIds(),
-      'tags': this.activeTags().join(',')
+//      'tags': this.activeTags().join(',')
+      'tags': this.activeTags()
     };
   },
   
+//  activeCategoryIds: function() {
+//    return $$('#categories a.active').map(function(element) {
+//      return element.id.split('_').last();
+//    });
+//  },
+  
   activeCategoryIds: function() {
-    return $$('#categories a.active').map(function(element) {
-      return element.id.split('_').last();
-    });
+    return this.selected_category_ids;
   },
   
   activeRegionNames: function() {
@@ -73,10 +126,14 @@ var Filters = Class.create({
     return this.selected_region_ids;
   },
 
+//  activeTags: function() {
+//    return $$('#tags a.active').map(function(element) {
+//      return element.innerHTML;
+//    });
+//  },
+  
   activeTags: function() {
-    return $$('#tags a.active').map(function(element) {
-      return element.innerHTML;
-    });
+    return this.selected_tags;
   },
   
   displayLoadingData: function() {
@@ -126,4 +183,5 @@ Event.addBehavior({
   'a.toggle_tag:click' : function(e) {
     filters.toggleTag(e.findElement('a'));
   }
-});
+	});
+
