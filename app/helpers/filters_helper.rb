@@ -63,8 +63,7 @@ module FiltersHelper
   end
 
   def region_image_map_area(name, coords)
-    #  Stef Jongkind 24 Oct 2011 
-    tag(:area, :href => "#", :alt => name, :title => name, :shape => "poly", :coords => coords, :onclick => "filters.toggleRegion('#{name}', #{get_region_id_from_name(name)}); return false;")
+    tag(:area, :href => "#", :alt => name, :title => name, :shape => "poly", :coords => coords, :onclick => "var filters = new Filters();filters.toggleRegion('#{name}', #{get_region_id_from_name(name)}); return false;")
   end
   
   def get_region_id_from_name(name)

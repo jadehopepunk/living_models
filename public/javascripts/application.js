@@ -7,7 +7,6 @@ var Filters = Class.create({
   selected_old_category_id: [],
   selected_region_ids: [],
   
-//  Stef Jongkind 24 Oct 2011 
 	toggleCategory: function(link) {
 		this.resetSelections();
 		this.selected_old_category_id.push(link);
@@ -31,14 +30,13 @@ var Filters = Class.create({
  },
 
 
-  toggleRegion: function(name, id) {
-	this.resetSelections();
-    this.selected_regions.push(name);
-    this.selected_region_ids.push(id);
-    this.updateRegionMap();
-    this.loadDataForFilters();
-  },
-
+ toggleRegion: function(name, id) {
+   this.resetSelections();
+   this.selected_regions.push(name);
+   this.selected_region_ids.push(id);
+   this.updateRegionMap();
+   this.loadDataForFilters();
+ },
 
   updateRegionMap: function() {
     var name = 'region_map';
