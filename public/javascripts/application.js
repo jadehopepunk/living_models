@@ -5,23 +5,14 @@ var Filters = Class.create({
   selected_regions: [],
   selected_old_tags: [],
   selected_old_category_id: [],
-  selected_tags: [],
   selected_region_ids: [],
-  selected_category_ids: [],
   
-//  Stef Jongkind 24 Oct 2011 please, leave comment for future revert
-//  toggleCategory: function(link) {
-//    this.toggleFilterLink(link);
-//  },
-
-  toggleCategory: function(link, id) {
-	this.resetSelections();
-    this.selected_old_category_id.push(id);
-    this.selected_category_ids.push(link);
-    this.loadDataForFilters();
-	$(id).addClassName('active');
-},
-
+//  Stef Jongkind 24 Oct 2011 
+	toggleCategory: function(link) {
+		this.resetSelections();
+		this.selected_old_category_id.push(link);
+		this.toggleFilterLink(link);
+	},
 
  resetSelections: function() {
 	this.selected_tags = [];
@@ -58,30 +49,19 @@ var Filters = Class.create({
     $('region_map_image').src = full_name;
   },
   
-//  toggleTag: function(link) {
-//    //this.toggleFilterLink(link);
-//	this.resetSelections();
-//    this.selected_tags.push(link);
-//    this.loadDataForFilters();    
-//    link.addClassName('active');
-//    this.selected_old_tags.push(link);
-//  },
-  
-  toggleTag: function(link, id) {
-    //this.toggleFilterLink(link);
-	this.resetSelections();
-    this.selected_old_tags.push(id);
-    this.selected_tags.push(link);
-    this.loadDataForFilters();    
-	$(id).addClassName('active');
-  },
-  
-  toggleFilterLink: function(link) {
-    link.blur();
-    link.toggleClassName('active');
-    this.loadDataForFilters();    
-  },
-  
+	toggleTag: function(link) {
+	  this.resetSelections();
+	  this.selected_old_tags.push(link);
+	  this.toggleFilterLink(link);
+	},
+
+
+	toggleFilterLink: function(link) {
+	  link.blur();
+	  link.addClassName('active');
+	  this.loadDataForFilters();    
+	},
+
   loadDataForFilters: function() {
     this.displayLoadingData();
     var request = new Ajax.Request("/projects.js", {
@@ -97,25 +77,18 @@ var Filters = Class.create({
     );
   },
 
-//  Stef Jongkind 24 Oct 2011 please, leave comment for future revert
   currentFilterParameters: function() {
     return {
-//	  'category_ids': this.activeCategoryIds().join(','),
-  	  'category_ids': this.activeCategoryIds(),
+	  'category_ids': this.activeCategoryIds().join(','),
       'region_ids': this.activeRegionIds(),
-//      'tags': this.activeTags().join(',')
-      'tags': this.activeTags()
+      'tags': this.activeTags().join(',')
     };
   },
   
-//  activeCategoryIds: function() {
-//    return $$('#categories a.active').map(function(element) {
-//      return element.id.split('_').last();
-//    });
-//  },
-  
   activeCategoryIds: function() {
-    return this.selected_category_ids;
+    return $$('#categories a.active').map(function(element) {
+      return element.id.split('_').last();
+    });
   },
   
   activeRegionNames: function() {
@@ -126,15 +99,15 @@ var Filters = Class.create({
     return this.selected_region_ids;
   },
 
-//  activeTags: function() {
-//    return $$('#tags a.active').map(function(element) {
-//      return element.innerHTML;
-//    });
-//  },
-  
   activeTags: function() {
-    return this.selected_tags;
+    return $$('#tags a.active').map(function(element) {
+      return element.innerHTML;
+    });
   },
+  
+//  activeTags: function() {
+//    return this.selected_tags;
+//  },
   
   displayLoadingData: function() {
     this.setNotice('notice', 'Loading')

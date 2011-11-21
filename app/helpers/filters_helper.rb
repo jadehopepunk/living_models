@@ -13,12 +13,10 @@ module FiltersHelper
   def category_filters_script
   end
   
-  #  Stef Jongkind 24 Oct 2011 please, leave comment for future revert
   def category_icon_link(category)
     if category.has_data?
-#      link_to_function category_icon(category), "", :id => dom_id(category), :class => 'toggle_category'
-link_to_function category_icon(category), "filters.toggleCategory('#{category.id}', 'category_#{category.id}')", :id => "category_#{category.id}"
-          else
+      link_to_function category_icon(category), "", :id => dom_id(category), :class => 'toggle_category'
+    else
       no_data_category_icon(category)
     end
   end
@@ -65,6 +63,7 @@ link_to_function category_icon(category), "filters.toggleCategory('#{category.id
   end
 
   def region_image_map_area(name, coords)
+    #  Stef Jongkind 24 Oct 2011 
     tag(:area, :href => "#", :alt => name, :title => name, :shape => "poly", :coords => coords, :onclick => "filters.toggleRegion('#{name}', #{get_region_id_from_name(name)}); return false;")
   end
   
@@ -76,8 +75,7 @@ link_to_function category_icon(category), "filters.toggleCategory('#{category.id
   def tag_filters
     tags = Project.top_tags(30).sort_by(&:name)
     tag_cloud(tags, %w(tag1 tag2 tag3)) do |tag, css_class|
-#      link_to_function tag.name, '', :class => css_class + ' toggle_tag'
-      link_to_function tag.name, "filters.toggleTag('#{tag.name}','tag_#{tag.id}')", :class => css_class , :id => "tag_#{tag.id}"
+      link_to_function tag.name, '', :class => css_class + ' toggle_tag'
     end.join(' ')
   end
   
