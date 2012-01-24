@@ -1,0 +1,87 @@
+/* -------------------------------------------------------------------------------------------------
+
+Load this stylesheet after formtastic.css in your layouts to override the CSS to suit your needs.
+This will allow you to update formtastic.css with new releases without clobbering your own changes.
+
+For example, to make the inline hint paragraphs a little darker in color than the standard #666:
+
+form.formtastic fieldset > ol > li p.inline-hints { color:#333; }
+
+HINT:
+The following style may be *conditionally* included for improved support on older versions of IE(<8)
+form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
+
+--------------------------------------------------------------------------------------------------*/
+
+/* LABELS
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset > ol > li label { text-align:right; color: #333; width: 20%; margin-right: 1em }
+
+/* INPUT LIs
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset > ol > li { border-bottom: 1px solid #CCCCCC; padding-bottom: 0.8em }
+
+form.formtastic .errorExplanation { margin-bottom: 1em; }
+form.formtastic .errorExplanation ul { list-style: disc outside none; margin: 1em 0; padding-left: 40px }
+
+form.formtastic .input_container {
+  float: left;
+  width: 30em;
+}
+
+form.formtastic .old_wrapper_input {
+  margin-left: 145px;
+}
+
+form.formtastic .old_wrapper_input button {
+  margin-right: 10px;
+}
+
+/* INLINE HINTS
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset > ol > li p.inline-hints { color:#666; margin:0.5em 0 0 20%; padding-left: 1em; clear: both }
+
+/* FROM SEMANTIC FORM
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset {
+  width: 45em; }
+form.formtastic textarea {
+  height: 6em; }
+form.formtastic textarea.short {
+  height: 3em; }
+form.formtastic textarea.long {
+  height: 12em; }
+form.formtastic input[type=text], form.formtastic input[type=password] {
+  border-top: 2px solid #999999;
+  border-left: 2px solid #999999;
+  border-right: 2px solid #cccccc;
+  border-bottom: 2px solid #cccccc; }
+form.formtastic select, form.formtastic textarea {
+  border-top: 2px solid #999999;
+  border-left: 2px solid #999999;
+  border-right: 2px solid #cccccc;
+  border-bottom: 2px solid #cccccc;
+  font-size: 100%; }
+form.formtastic input[type=text], form.formtastic input[type=password] {
+  width: 30em;
+  font-size: 100%; }
+form.formtastic textarea {
+  width: 30em;
+  font-size: 100%; }
+form.formtastic select {
+  height: 1.5em; }
+form.formtastic input[type=submit], form.formtastic input[type=button] {
+  background: #229316;
+  color: #fff;
+  border-top: 2px solid #55c649;
+  border-left: 2px solid #55c649;
+  border-right: 2px solid #006000;
+  border-bottom: 2px solid #006000;
+  margin: 0 5px; }
+form.formtastic input[type=submit].cancel {
+  border-top: 2px solid #e68582;
+  border-left: 2px solid #e68582;
+  border-bottom: 2px solid #801f1c;
+  border-right: 2px solid #801f1c;
+  color: #ffb8b5;
+  background: #b3524f; }

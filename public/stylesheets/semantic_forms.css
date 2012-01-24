@@ -1,47 +1,9 @@
-form fieldset {
+/*form fieldset {
   float: left;
   width: 34em; }
-form textarea {
-  height: 6em; }
-form textarea.short {
-  height: 3em; }
-form textarea.long {
-  height: 12em; }
-form input[type=text], form input[type=password] {
-  border-top: 2px solid #999999;
-  border-left: 2px solid #999999;
-  border-right: 2px solid #cccccc;
-  border-bottom: 2px solid #cccccc; }
-form select, form textarea {
-  border-top: 2px solid #999999;
-  border-left: 2px solid #999999;
-  border-right: 2px solid #cccccc;
-  border-bottom: 2px solid #cccccc;
-  font-size: 100%; }
-form input[type=text], form input[type=password] {
-  width: 30em;
-  font-size: 100%; }
-form textarea {
-  width: 30em;
-  font-size: 100%; }
-form select {
-  height: 1.5em; }
-form input[type=submit], form input[type=button] {
-  background: #229316;
-  color: #fff;
-  border-top: 2px solid #55c649;
-  border-left: 2px solid #55c649;
-  border-right: 2px solid #006000;
-  border-bottom: 2px solid #006000;
-  margin: 0 5px; }
-form input[type=submit].cancel {
-  border-top: 2px solid #e68582;
-  border-left: 2px solid #e68582;
-  border-bottom: 2px solid #801f1c;
-  border-right: 2px solid #801f1c;
-  color: #ffb8b5;
-  background: #b3524f; }
-form div.fieldWithErrors {
+*/
+
+/*form div.fieldWithErrors {
   display: inline; }
   form div.fieldWithErrors input, form div.fieldWithErrors select, form div.fieldWithErrors textarea {
     border-top: 2px solid #8F0600;
@@ -94,3 +56,4 @@ form div.required {
     font-weight: bold; }
   form div.required label span.help {
     margin-top: 0; }
+*/

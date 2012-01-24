@@ -1,4 +1,5 @@
-- form_for [@project, @photo], :live_validations => true, :html => {:multipart => true} do |f|
+- semantic_form_for [@project, @photo], :html => {:multipart => true} do |f|
   = f.error_messages
-  = f.file_field :file
-  = f.submit_and_cancel_buttons "Create"
+  - f.inputs do
+    = f.input :file
+  = submit_and_cancel_buttons "Save"

@@ -16,7 +16,7 @@ class SemanticFormBuilder < ActionView::Helpers::FormBuilder
     define_method(method_name) do |method, *args|
       options = args.first || {}
       field_name, label, options = field_settings(method, options)
-      wrapping("text", field_name, label, super, options)      
+      wrapping("text", field_name, label, super(*args), options)      
     end
   end
 

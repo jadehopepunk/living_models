@@ -1,8 +1,9 @@
 %h1 Login
 
-- form_for @user_session, :url => user_sessions_path do |f|
-  = f.error_messages
-  = f.text_field :email
-  = f.password_field :password
-  = f.check_box :remember_me
+- semantic_form_for @user_session, :url => user_sessions_path do |f|
+  - f.inputs do
+    = f.error_messages
+    = f.input :email
+    = f.input :password
+    = f.input :remember_me, :as => :boolean
   = f.submit "Login"
