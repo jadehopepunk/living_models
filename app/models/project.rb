@@ -27,6 +27,8 @@ class Project < ActiveRecord::Base
     end
   }
 
+  default_scope :conditions => {:is_spam => false}
+
   delegate :name, :to => :category, :prefix => :category, :allow_nil => true
 
   before_validation_on_create :setup_owner
@@ -35,6 +37,12 @@ class Project < ActiveRecord::Base
   def self.top_published_tags(limit)
     options = {:on => 'tags', :order => 'count desc', :limit => limit}
     Tag.published.find(:all, find_options_for_tag_counts(options))
+  end
+
+  def self.find_not_spam(id)
+    result = find(id)
+    raise ActiveRecord::RecordNotFound if result && result.is_spam?
+    result
   end
 
   def feature_photo
@@ -47,6 +55,14 @@ class Project < ActiveRecord::Base
 
   def new_file=(value)
     photos << Photo.new(:file => value) if value
+  end
+
+  def mark_as_spam!(mark_related = true)
+    update_attribute(:is_spam, true)
+    if mark_related && website.present?
+      other_projects = Project.all(:conditions => ["website = ? AND id != ?", website, id])
+      other_projects.map {|p| p.mark_as_spam!(false)}
+    end
   end
 
   protected

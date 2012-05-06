@@ -1,0 +1,37 @@
+%h1 Are you sure this is spam?
+
+%p
+  = link_to "Nope, it looks fine.", admin_projects_path
+
+%p
+  = link_to "YES, DELETE THIS SPAM", confirm_spam_admin_project_path(@project), :method => :put
+
+
+%hr
+.project_details
+  %h2=h @project.name
+
+  .contact
+    %h4 Contact:
+    .contact_name=h @project.contact_name
+    .contact_phone=h @project.contact_phone
+    .contact_email=h @project.contact_email_address
+    - if @project.website
+      .website=h with_protocol(@project.website)
+
+  .descriptions
+    .summary
+      %h4 Summary
+      =h @project.summary
+
+    .goals
+      %h4 Goals
+      =h @project.goals
+
+    .outcomes
+      %h4 Outcomes
+      =h @project.outcomes
+
+    .future_plans
+      %h4 Future Plans
+      =h @project.future_plans

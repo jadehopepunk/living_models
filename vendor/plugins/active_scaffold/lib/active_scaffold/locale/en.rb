@@ -1,4 +1,3 @@
-# encoding: utf-8
 {
   :'en' => {
     :active_scaffold => {
@@ -26,7 +25,7 @@
       :found => 'Found',
       :hide => 'Hide',
       :live_search => 'Live Search',
-      :loading => 'Loading…',
+      :loading => 'Loading...',
       :next => 'Next',
       :no_entries => 'No Entries',
       :no_options => 'no options',
@@ -41,7 +40,7 @@
       :replace_with_new => 'Replace With New',
       :revisions_for_model => 'Revisions for {{model}}',
       :reset => 'Reset',
-      :saving => 'Saving…',
+      :saving => 'Saving...',
       :search => 'Search',
       :search_terms => 'Search Terms',
       :_select_ => '- select -',

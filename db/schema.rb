@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110923233523) do
+ActiveRecord::Schema.define(:version => 20120506003759) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20110923233523) do
     t.string   "region"
     t.integer  "owner_id"
     t.integer  "region_id"
+    t.boolean  "is_spam",               :default => false
   end
 
   add_index "projects", ["category_id"], :name => "index_projects_on_category_id"

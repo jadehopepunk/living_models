@@ -7,15 +7,17 @@ class User < ActiveRecord::Base
     config.merge_validates_length_of_password_confirmation_field_options :allow_nil => true
     config.ignore_blank_passwords true
   end
-    
+
   attr_protected :is_admin
   after_create :send_notification_email
   before_validation_on_create :activate_if_admin
-  
+
+  has_many :projects, :foreign_key => :owner_id
+
   def name
     email.split('@').first.titleize
   end
-  
+
   def send_notification_email
     reset_perishable_token!
     Notifier.deliver_new_user_created(self)
@@ -26,14 +28,14 @@ class User < ActiveRecord::Base
   def has_password?
     !crypted_password.blank?
   end
-  
+
   def activate!
     self.activated = true
     save!
-  end  
-  
+  end
+
   protected
-  
+
     def activate_if_admin
       self.activated = true if is_admin
     end

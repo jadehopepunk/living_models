@@ -5,7 +5,7 @@
         - if @project.photos.first
           = image_tag @project.photos.first.file.url(:main)
     - if @project.photos.count > 1
-      = render :partial => 'photo_thumbnails', :locals => {:edit => false}              
+      = render :partial => 'photo_thumbnails', :locals => {:edit => false}
     = javascript_tag "var browser = new ImageBrowser('all_photos_container')"
 
   %h3
@@ -38,7 +38,7 @@
       %h4 Future Plans
       = simple_format @project.future_plans
 
-  
+
   / - project_display_fields.each do |key|
   /   - unless %w(contact_name contact_phone contact_email_address website).include?(key.to_s)
   /     = project_field key
