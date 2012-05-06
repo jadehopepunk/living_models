@@ -27,6 +27,10 @@ class Project < ActiveRecord::Base
     end
   }
 
+  named_scope :probably_spam, {
+    :conditions => ["summary = goals AND summary = outcomes AND summary = future_plans AND summary != '' AND summary IS NOT NULL"]
+  }
+
   default_scope :conditions => {:is_spam => false}
 
   delegate :name, :to => :category, :prefix => :category, :allow_nil => true
