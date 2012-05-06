@@ -36,7 +36,7 @@ class Project < ActiveRecord::Base
   delegate :name, :to => :category, :prefix => :category, :allow_nil => true
 
   before_validation_on_create :setup_owner
-  after_create :notify_admin_of_pending_project
+  after_create :check_spam, :notify_admin_of_pending_project
 
   def self.top_published_tags(limit)
     options = {:on => 'tags', :order => 'count desc', :limit => limit}
@@ -71,8 +71,14 @@ class Project < ActiveRecord::Base
 
   protected
 
+    def check_spam
+      if summary.present? && [summary, goals, outcomes, future_plans].uniq.length == 1
+        mark_as_spam!(false)
+      end
+    end
+
     def notify_admin_of_pending_project
-      unless published
+      unless published || is_spam?
         Notifier.deliver_pending_project_added(self)
       end
     rescue => e
