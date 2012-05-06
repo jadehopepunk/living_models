@@ -4,15 +4,15 @@ module FiltersHelper
       category_icon_link(category)
     end.join(' ')
   end
-  
-  
+
+
   def filters_javascript
     # [category_filters_script].join("\n")
   end
-  
+
   def category_filters_script
   end
-  
+
   def category_icon_link(category)
     if category.has_data?
       link_to_function category_icon(category), "", :id => dom_id(category), :class => 'toggle_category'
@@ -20,24 +20,24 @@ module FiltersHelper
       no_data_category_icon(category)
     end
   end
-  
+
   def no_data_category_icon(category)
     category_icon(category, :class => 'category_icon no_data')
   end
-  
+
   def category_icon(category, options = {})
     image_tag("category_icons/#{category.label}.jpg", {:alt => category.name, :title => category.name, :class => 'category_icon'}.merge(options))
   end
-  
+
   def region_filters
-    region_image + 
+    region_image +
     region_image_map
   end
-  
+
   def region_image
     image_tag 'maps/nz/region_map.png', :usemap => '#region_map', :id => 'region_map_image'
   end
-  
+
   def region_image_map
     northland = region_image_map_area("Northland", "71,3,85,13,87,27,77,18")
     auckland = region_image_map_area("Auckland", "90,25,97,34,90,40,86,30")
@@ -58,24 +58,24 @@ module FiltersHelper
     otago = region_image_map_area("Otago", "37,127,34,136,40,137,46,141,51,141,47,152,34,163,31,151,31,145,28,147,21,139,21,130,27,126,35,127")
     southland = region_image_map_area("Southland", "19,132,22,142,26,147,31,145,30,152,32,163,4,155,4,150,19,132")
     stewartisland = region_image_map_area("Stewart Island", "16,163,21,169,14,173,15,165")
-    
+
     content_tag(:map, northland + auckland + coromandel + bayofplenty + eastland + waikato + hawkesbay + taranaki + taupo + manawatu + wellington + wairarapa + westcoast + nelsontasman + marlborough + canterbury + otago + southland + stewartisland, :name => 'region_map', :id => 'region_map')
   end
 
   def region_image_map_area(name, coords)
     tag(:area, :href => "#", :alt => name, :title => name, :shape => "poly", :coords => coords, :onclick => "var filters = new Filters();filters.toggleRegion('#{name}', #{get_region_id_from_name(name)}); return false;")
   end
-  
+
   def get_region_id_from_name(name)
     region = Region.find_by_name(name)
     return region.id unless region.blank?
   end
 
   def tag_filters
-    tags = Project.top_tags(30).sort_by(&:name)
+    tags = Project.top_published_tags(30).sort_by(&:name)
     tag_cloud(tags, %w(tag1 tag2 tag3)) do |tag, css_class|
       link_to_function tag.name, '', :class => css_class + ' toggle_tag'
     end.join(' ')
   end
-  
+
 end

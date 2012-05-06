@@ -32,14 +32,19 @@ class Project < ActiveRecord::Base
   before_validation_on_create :setup_owner
   after_create :notify_admin_of_pending_project
 
+  def self.top_published_tags(limit)
+    options = {:on => 'tags', :order => 'count desc', :limit => limit}
+    Tag.published.find(:all, find_options_for_tag_counts(options))
+  end
+
   def feature_photo
     photos.first
   end
-  
+
   def can_be_edited_by?(current_user)
     current_user && (current_user.is_admin? || current_user == owner)
   end
-  
+
   def new_file=(value)
     photos << Photo.new(:file => value) if value
   end
