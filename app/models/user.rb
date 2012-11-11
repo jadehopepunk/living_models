@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
     reset_perishable_token!
     Notifier.deliver_new_user_created(self)
   rescue => e
-    HoptoadNotifier.notify(e)
+    Airbrake.notify(e)
   end
 
   def has_password?

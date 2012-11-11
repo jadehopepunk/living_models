@@ -82,7 +82,7 @@ class Project < ActiveRecord::Base
         Notifier.deliver_pending_project_added(self)
       end
     rescue => e
-      HoptoadNotifier.notify(e)
+      Airbrake.notify(e)
     end
 
     def setup_owner

@@ -1,150 +1,83 @@
-body {
-  margin: 0;
-  padding: 0;
-  color: #333;
-  background-color: #eee;
-  line-height: 120%;
-  font-size: 11pt; }
+/*
+Syntax error: Invalid property: ":color= !anchor_dark".
+        on line 23 of /Users/craig/development/living_models/public/stylesheets/sass/application.sass
 
-a:link, a:visited {
-  color: #cc3300;
-  text-decoration: none;
-  font-weight: bold; }
-  a:link img, a:visited img {
-    border: 0; }
+18:   :background-color #EEE
+19:   :line-height 120%
+20:   :font-size 11pt
+21:  
+22: a:link, a:visited
+23:   :color= !anchor_dark
+24:   :text-decoration none
+25:   :font-weight bold
+26:   
+27:   img
+28:     border: 0
 
-img {
-  border: 0; }
-
-a:hover {
-  color: #ff6633;
-  text-decoration: underline; }
-  a:hover img {
-    border: 0; }
-
-pre {
-  width: 100%;
-  padding-bottom: 24px; }
-
-h1 {
-  font-size: 16pt;
-  font-weight: bold; }
-
-h2 {
-  font-size: 13pt;
-  font-weight: bold;
-  color: #333399; }
-
-h3 {
-  font-size: 13pt;
-  font-weight: bold;
-  color: #333399; }
-
-#page_body {
-  width: 998px;
-  margin: 10px auto;
-  background-color: #E9E9E9;
-  border: 1px solid #BCBCBC; }
-
-#top_menu {
-  background-image: url('../images/layout/top_menu_background.gif');
-  background-repeat: repeat-x;
-  width: 100%;
-  height: 43px;
-  top: 0px; }
-  #top_menu .tabs {
-    float: left; }
-    #top_menu .tabs a.site_section {
-      width: 120px;
-      height: 43px;
-      display: inline-block;
-      background-repeat: no-repeat; }
-      #top_menu .tabs a.site_section span {
-        display: none; }
-    #top_menu .tabs a#about {
-      background-image: url(../images/layout/top_menu_about.gif); }
-      #top_menu .tabs a#about:hover {
-        background-image: url(../images/layout/top_menu_about_over.gif); }
-    #top_menu .tabs a#contact {
-      background-image: url(../images/layout/top_menu_contact.gif); }
-      #top_menu .tabs a#contact:hover {
-        background-image: url(../images/layout/top_menu_contact_over.gif); }
-  #top_menu .account_section {
-    float: right;
-    margin: 10px 10px 0 0;
-    font-size: 90%; }
-
-#hero {
-  background-image: url('../images/layout/Header.jpg');
-  background-repeat: no-repeat;
-  height: 200px;
-  display: block; }
-  #hero h1 {
-    display: none; }
-
-#contents {
-/*  background-image: url(../images/layout/full_width_background.gif);*/
-  background-repeat: repeat-y;background:white; }
-  #contents .main_contents {
-/*    background-image: url(../images/layout/full_width_header.gif); */
-    background-repeat: no-repeat; }
-    #contents .main_contents .main_inner_contents {
-/*      background-image: url(../images/layout/full_width_footer.gif);*/
-      background-repeat: no-repeat;
-      background-position: bottom left;
-      padding: 20px 40px 25px 40px;
-      overflow: hidden; }
-
-#footer {
-  height: 23px;
-  background-repeat: no-repeat;
-  padding: 30px 20px 20px 20px;
-  font-size: 80%; }
-
-.formError {
-  color: #dd3c10;
-  background-color: #fff9d7;
-  border-color: #e2c822;
-  border-style: solid;
-  border-width: 2px;
-  margin: 5px 0;
-  padding: 3px 6px; }
-
-form {
-  *display: inline-block; }
-  form:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-
-.flashMessages {
-  clear: both;
-  color: #FFF; }
-  .flashMessages .flashMessage {
-    margin-bottom: 1px; }
-    .flashMessages .flashMessage .wrap {
-      padding: 6px 0 5px 0;
-      text-align: center; }
-  .flashMessages .notice {
-    color: #003300;
-    background-color: #99cc66;
-    border-bottom: 1px solid #339900; }
-  .flashMessages .warning, .flashMessages .error {
-    color: #660000;
-    background-color: #ff6666;
-    border-bottom: 1px solid #993333; }
-
-.region_selector {
-  width: 130px;
-  margin: 0 auto; }
-
-.actions a {
-  padding-right: 10px;
-  border-right: 2px solid #333;
-  margin-right: 10px; }
-.actions a:last-child {
-  padding-right: 0;
-  border-right: 0;
-  margin-right: 0; }
+Backtrace:
+/Users/craig/development/living_models/public/stylesheets/sass/application.sass:23
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:558:in `parse_line'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:471:in `build_tree'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:490:in `block in append_children'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:489:in `each'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:489:in `append_children'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:480:in `block in build_tree'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:473:in `each'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:473:in `build_tree'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:490:in `block in append_children'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:489:in `each'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:489:in `append_children'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:345:in `_to_tree'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:315:in `_render'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:263:in `block in render'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/util.rb:373:in `silence_sass_warnings'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/engine.rb:263:in `render'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/plugin/compiler.rb:341:in `update_stylesheet'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/plugin/compiler.rb:201:in `each'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/plugin.rb:81:in `update_stylesheets'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/plugin.rb:54:in `check_for_updates'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/sass-3.2.3/lib/sass/plugin/rack.rb:51:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.8/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.8/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.5/lib/rack/methodoverride.rb:24:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.8/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.8/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.8/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.8/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.8/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.8/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.8/lib/active_record/query_cache.rb:12:in `cache'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.8/lib/active_record/query_cache.rb:31:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.8/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.8/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.8/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.5/lib/rack/sendfile.rb:106:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.8/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.8/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.8/lib/rails/rack/logger.rb:13:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.5/lib/rack/runtime.rb:17:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.8/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.5/lib/rack/lock.rb:13:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.5/lib/rack/lock.rb:13:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.8/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/airbrake-3.1.6/lib/airbrake/rack.rb:41:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/airbrake-3.1.6/lib/airbrake/user_informer.rb:12:in `call'
+/Users/craig/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.8/lib/rails/application.rb:168:in `call'
+/Users/craig/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147:in `handle'
+/Users/craig/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:99:in `rescue in block (2 levels) in start'
+/Users/craig/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:96:in `block (2 levels) in start'
+/Users/craig/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:86:in `each'
+/Users/craig/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:86:in `block in start'
+/Users/craig/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:66:in `loop'
+/Users/craig/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:66:in `start'
+/Users/craig/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:13:in `run'
+/Users/craig/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/bin/nack_worker:4:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid property: \":color= !anchor_dark\".\A         on line 23 of /Users/craig/development/living_models/public/stylesheets/sass/application.sass\A \A 18:   :background-color #EEE\A 19:   :line-height 120%\A 20:   :font-size 11pt\A 21:  \A 22: a:link, a:visited\A 23:   :color= !anchor_dark\A 24:   :text-decoration none\A 25:   :font-weight bold\A 26:   \A 27:   img\A 28:     border: 0"; }
