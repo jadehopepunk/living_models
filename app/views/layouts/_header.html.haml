@@ -7,6 +7,6 @@
       = "Welcome #{current_user.name},"
       = link_to "logout", logout_path, :method => :delete
       - if current_user.is_admin?
-        = '(' + link_to("admin", admin_users_path) + ')'
+        = ('(' + link_to("admin", admin_users_path) + ')').html_safe
     - else
       = link_to "login", login_path
