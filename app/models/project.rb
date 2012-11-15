@@ -35,7 +35,7 @@ class Project < ActiveRecord::Base
 
   delegate :name, :to => :category, :prefix => :category, :allow_nil => true
 
-  before_validation_on_create :setup_owner
+  before_validation :on => :create, :setup_owner
   after_create :check_spam, :notify_admin_of_pending_project
 
   def self.top_published_tags(limit)
