@@ -22,7 +22,9 @@ class ProjectsController < InheritedResources::Base
     end
 
     def filtered_scope(parent_scope)
-      parent_scope.for_categories(category_ids).for_regions(region_ids).tagged_with(tags, :any => true)
+      scope = parent_scope.for_categories(category_ids).for_regions(region_ids)
+      scope = scope.tagged_with(tags, :any => true) unless tags.empty?
+      scope
     end
 
     def category_ids
