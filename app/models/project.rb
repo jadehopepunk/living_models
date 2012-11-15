@@ -9,9 +9,9 @@ class Project < ActiveRecord::Base
   belongs_to :region
   belongs_to :owner, :class_name => "User"
 
-  named_scope :published, :conditions => {:published => true}
+  scope :published, :conditions => {:published => true}
 
-  named_scope :for_categories, lambda {|category_ids|
+  scope :for_categories, lambda {|category_ids|
     if category_ids.empty?
       {}
     else
@@ -19,7 +19,7 @@ class Project < ActiveRecord::Base
     end
   }
 
-  named_scope :for_regions, lambda {|region_ids|
+  scope :for_regions, lambda {|region_ids|
     if region_ids.blank?
       {}
     else
@@ -27,7 +27,7 @@ class Project < ActiveRecord::Base
     end
   }
 
-  named_scope :probably_spam, {
+  scope :probably_spam, {
     :conditions => ["summary = goals AND summary = outcomes AND summary = future_plans AND summary != '' AND summary IS NOT NULL"]
   }
 
