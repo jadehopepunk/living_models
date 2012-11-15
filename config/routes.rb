@@ -18,22 +18,21 @@ ActionController::Routing::Routes.draw do |map|
 end
 
 # RealSolutions::Application.routes do
-#   match '/login' => "user_sessions#new"
-#   match '/logout' => "user_sessions#destroy"
-
-#   map.resource :user_session
+#   resources :user_sessions
+#   match 'login' => "user_sessions#new",      :as => :login
+#   match 'logout' => "user_sessions#destroy", :as => :logout
 
 #   resources :projects, :has_many => :photos
-#   resources :photos, :user_sessions
-#   resources :users, :member => {:activate => :get, :edit_password => :get, :update_password => :put}
+#   # resources :photos, :user_sessions
+#   # resources :users, :member => {:activate => :get, :edit_password => :get, :update_password => :put}
 
-#   namespace :admin do
-#     root :to => 'projects'
-#     resources :users, :photos, :categories, :regions, :active_scaffold => true
-#     resources :projects, :active_scaffold => true, :member => {:check_spam => :get, :confirm_spam => :put}
-#   end
+#   # namespace :admin do
+#   #   root :to => 'projects'
+#   #   resources :users, :photos, :categories, :regions, :active_scaffold => true
+#   #   resources :projects, :active_scaffold => true, :member => {:check_spam => :get, :confirm_spam => :put}
+#   # end
 
-#   resource :about, :controller => "about"
+#   # resource :about, :controller => "about"
 
-#   root :to => "projects"
+#   # root :to => "projects"
 # end
