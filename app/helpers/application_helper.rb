@@ -11,7 +11,7 @@ module ApplicationHelper
   def flash_div(key = nil)
     keys = key ? [key] : flash.keys
     rows = keys.collect { |key| content_tag(:div, content_tag(:div, flash[key], :class => 'wrap'), {:id => key, :class => "flashMessage #{key}"}) if flash[key] }
-    content_tag(:div, rows.join("\n"), :class => 'flashMessages', :id => 'flash_container')
+    content_tag(:div, rows.join("\n").html_safe, :class => 'flashMessages', :id => 'flash_container').html_safe
   end
   
   def with_protocol(url)
