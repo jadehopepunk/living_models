@@ -20,5 +20,5 @@
     = f.input :contact_email_address
     = f.input :contact_phone
     = f.input :website, :hint => "Website address for your project, if it has one"
-    = submit_and_cancel_buttons "Save"
-    = textile_editor_initialize
+    = f.actions
+    = textile_editor_initialize.html_safe

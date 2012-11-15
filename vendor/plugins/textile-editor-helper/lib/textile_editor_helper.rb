@@ -49,9 +49,9 @@ module ActionView
       
       def textile_editor_support
         output = []
-        output << stylesheet_link_tag('textile-editor') 
+        output << stylesheet_link_tag('textile-editor')
         output << javascript_include_tag('textile-editor')
-        output.join("\n")
+        output.join("\n").html_safe
       end
       
       # registers a new button for the Textile Editor toolbar
@@ -140,7 +140,7 @@ module ActionView
 
         output << '/* ]]> */'
         output << '</script>'
-        output.join("\n")
+        output.map(&:html_safe).join("\n").html_safe
       end
     end
     

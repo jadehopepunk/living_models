@@ -7,15 +7,16 @@ module FormHelper
       hint = content_tag(:p, options[:hint], :class => 'inline-hints')
     end
     
-    content_tag(:li, :class => 'textile required') do
+    result = content_tag(:li, :class => 'textile required') do
       content_tag(:label, :for => "#{f.object_name}_#{method_name}") do
         label_contents = options[:label] || method_name.to_s.humanize
         label_contents += " <abbr title=\"required\">*</abbr>" if options[:required]
-        label_contents
+        label_contents.html_safe
       end + content_tag(:div, :class => 'input_container') do
         f.textile_editor(method_name, options)
-      end + hint
+      end.html_safe + hint.html_safe
     end
+    result.html_safe
   end
 
   def submit_and_cancel(submit_name, cancel_name, options = {})
