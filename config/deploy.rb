@@ -8,7 +8,8 @@ set :application, "living_models"
 set :repository,  "git@github.com:craigambrose/living_models.git"
 set :scm, "git"
 # set :git_enable_submodules, 1
-set :branch, "master" unless exists?(:branch)
+# set :branch, "master" unless exists?(:branch)
+set :branch, "rails3" unless exists?(:branch)
 set :use_sudo, false
 
 namespace :deploy do

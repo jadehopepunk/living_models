@@ -140,6 +140,7 @@ DEPENDENCIES
   mysql2 (= 0.2.18)
   paperclip (= 2.5.0)
   rails (= 3.0.8)
+  rake
   responders
   sass
   will_paginate
