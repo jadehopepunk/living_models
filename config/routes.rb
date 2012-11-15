@@ -16,3 +16,24 @@ ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => "projects"
 end
+
+# RealSolutions::Application.routes do
+#   match '/login' => "user_sessions#new"
+#   match '/logout' => "user_sessions#destroy"
+
+#   map.resource :user_session
+
+#   resources :projects, :has_many => :photos
+#   resources :photos, :user_sessions
+#   resources :users, :member => {:activate => :get, :edit_password => :get, :update_password => :put}
+
+#   namespace :admin do
+#     root :to => 'projects'
+#     resources :users, :photos, :categories, :regions, :active_scaffold => true
+#     resources :projects, :active_scaffold => true, :member => {:check_spam => :get, :confirm_spam => :put}
+#   end
+
+#   resource :about, :controller => "about"
+
+#   root :to => "projects"
+# end

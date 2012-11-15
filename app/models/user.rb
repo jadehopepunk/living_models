@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
   attr_protected :is_admin
   after_create :send_notification_email
-  before_validation :on => :create, :activate_if_admin
+  before_validation :activate_if_admin, :on => :create
 
   has_many :projects, :foreign_key => :owner_id
 
