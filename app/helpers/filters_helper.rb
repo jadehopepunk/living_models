@@ -2,7 +2,7 @@ module FiltersHelper
   def category_filters
     Category.all.map do |category|
       category_icon_link(category)
-    end.join(' ')
+    end.join(' ').html_safe
   end
 
 
@@ -75,7 +75,7 @@ module FiltersHelper
     tags = Project.top_published_tags(30).sort_by(&:name)
     tag_cloud(tags, %w(tag1 tag2 tag3)) do |tag, css_class|
       link_to_function tag.name, '', :class => css_class + ' toggle_tag'
-    end.join(' ')
+    end.join(' ').html_safe
   end
 
 end

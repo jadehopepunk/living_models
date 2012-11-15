@@ -39,8 +39,7 @@ class Project < ActiveRecord::Base
   after_create :check_spam, :notify_admin_of_pending_project
 
   def self.top_published_tags(limit)
-    options = {:on => 'tags', :order => 'count desc', :limit => limit}
-    Tag.published.find(:all, find_options_for_tag_counts(options))
+    tag_counts.limit(limit)
   end
 
   def self.find_not_spam(id)

@@ -1,15 +1,15 @@
 @import mixins.sass
 
-!fixed_width= 998px
+$fixed_width: 998px
  
-!anchor_light= #FF6633
-!anchor_dark= #CC3300
+$anchor_light: #FF6633
+$anchor_dark: #CC3300
  
-!heading= #333399
+$heading: #333399
  
-!error_text= #DD3C10
-!error_background= #fff9d7 
-!error_border= #e2c822
+$error_text: #DD3C10
+$error_background: #fff9d7 
+$error_border: #e2c822
 
 body
   :margin 0
@@ -20,7 +20,7 @@ body
   :font-size 11pt
  
 a:link, a:visited
-  :color= !anchor_dark
+  :color $anchor_dark
   :text-decoration none
   :font-weight bold
   
@@ -31,7 +31,7 @@ img
   border: 0
   
 a:hover
-  :color= !anchor_light
+  :color $anchor_light
   :text-decoration underline
 
   img
@@ -48,15 +48,15 @@ h1
 h2
   :font-size 13pt
   :font-weight bold
-  :color= !heading
+  :color $heading
  
 h3
   :font-size 13pt
   :font-weight bold
-  :color= !heading
+  :color $heading
   
 #page_body
-  :width= !fixed_width
+  :width $fixed_width
   :margin 10px auto
   :background-color #E9E9E9
   :border 1px solid #BCBCBC
@@ -126,9 +126,9 @@ h3
   font-size: 80%
   
 .formError
-  :color= !error_text
-  :background-color= !error_background
-  :border-color= !error_border
+  :color $error_text
+  :background-color $error_background
+  :border-color $error_border
   :border-style solid
   :border-width 2px
   :margin 5px 0

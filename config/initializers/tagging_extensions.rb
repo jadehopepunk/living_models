@@ -6,4 +6,4 @@ module LivingModelsTagExtensions
   end
 end
 
-Tag.send(:include, LivingModelsTagExtensions)
+ActsAsTaggableOn::Tag.send(:include, LivingModelsTagExtensions)

@@ -12,6 +12,7 @@ gem 'authlogic'
 gem 'will_paginate'
 gem 'formtastic', '1.2.4'
 gem 'airbrake'
+gem 'acts-as-taggable-on'
 
 group :development do
   gem 'capistrano'
