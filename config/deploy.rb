@@ -4,8 +4,8 @@ set :default_stage, "production"
 require 'capistrano/ext/multistage'
 require "bundler/capistrano"
 
-set :application, "living_models"
-set :repository,  "git@github.com:craigambrose/living_models.git"
+set :application, "real_solutions"
+set :repository,  "git://github.com/craigambrose/living_models.git"
 set :scm, "git"
 # set :git_enable_submodules, 1
 set :branch, "master" unless exists?(:branch)

@@ -6,7 +6,7 @@ task :sync => [:environment] do
 
   db_config = YAML.load_file('config/database.yml')
 
-  system "ssh #{host} \"mysqldump -u #{db_config['production']["username"]} -p#{db_config['production']["password"] } -Q --add-drop-table -O add-locks=FALSE -O lock-tables=FALSE #{db_config['production']["database"]} > ~/dump.sql\""
+  system "ssh #{host} \"mysqldump -u #{db_config['production']["username"]} -p#{db_config['production']["password"] } -Q --add-drop-table #{db_config['production']["database"]} > ~/dump.sql\""
   system "rsync -az --progress #{host}:~/dump.sql ./db/production_data.sql"
   system "mysql -u #{db_config['development']["username"]} #{db_config['development']["database"]} < ./db/production_data.sql"
   rm_rf "./db/production_data.sql"
