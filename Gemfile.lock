@@ -35,6 +35,7 @@ GEM
     inherited_resources (1.0.0)
       has_scope (>= 0.3)
       responders (>= 0.2)
+    json (1.7.3)
     mime-types (1.19)
     mysql (2.9.0)
     net-scp (1.0.4)
@@ -58,6 +59,8 @@ GEM
       activesupport (= 2.3.15)
       rake (>= 0.8.3)
     rake (10.0.3)
+    rdoc (3.12)
+      json (~> 1.4)
     responders (0.4)
     will_paginate (2.3.11)
 
@@ -75,5 +78,6 @@ DEPENDENCIES
   mysql
   paperclip (= 2.5.0)
   rails (= 2.3.15)
+  rdoc
   responders (= 0.4.0)
   will_paginate (= 2.3.11)
