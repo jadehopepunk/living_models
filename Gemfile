@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'rails', '2.3.12'
+gem 'rails', '2.3.14'
 gem 'mysql'
 gem "haml", "2.2.16"
 gem 'paperclip', "2.5.0"
