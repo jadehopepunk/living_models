@@ -4,3 +4,4 @@ config/database.yml
 .DS_Store
 mkmf.log
 public/system/*
+.idea
